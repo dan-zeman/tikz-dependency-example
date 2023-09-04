@@ -1,0 +1,776 @@
+\documentclass{standalone}  % produce a document exactly as big as needed for the figure (or other contents) inside
+\usepackage{comment}        % \begin{comment} ... \end{comment} for currently unused examples
+\usepackage{xcolor}         % typesetting in color
+\usepackage{tikz-dependency}
+\usepackage{fontspec}
+\newfontfamily\ukfont[Script=Cyrillic]{CMU Serif}
+\newcommand{\uk}[1]{{\ukfont #1}}
+\newfontfamily\jafont[Script=CJK]{Code2000}
+\newcommand{\ja}[1]{{\jafont #1}}
+\newcommand{\zh}[1]{{\jafont #1}}
+%\newfontfamily\thfont[Script=Thai]{Code2000}
+%\newcommand{\thai}[1]{{\thfont #1}} % \th is already used for something else
+
+% Language code in square brackets.
+\newcommand{\lng}[1]{\texttt{[#1]}}
+% Linguistic examples. These are inline.
+% Other option is to put them above each other and align corresponding words.
+% The tikz-dependency package can achieve that (no need to display dependencies).
+% It can be combined with the package gb4e (numbered examples).
+% Note however that the package uses the keywords \ex and \exe and we cannot use them here!
+% Use the ``no italics foreign'' versions for foreign writing systems that do not use italics (or our font simply does not provide it).
+%%%!!! Do we want to display words or short expressions differently from longer segments and sentences?
+% exef:   just foreign (including English if it is the studied language)
+% exea:   just foreign, no italics (e.g., Arabic)
+% exee:   just the fluent English translation
+% exeft:  foreign - transliterated foreign
+% exeat:  no italics foreign (e.g. Arabic) - transliterated foreign
+% exefl:  foreign - literal English
+% exeal:  no italics foreign (e.g. Arabic) - literal English
+% exefe:  foreign - English (acceptably fluent)
+% exeae:  no italics foreign (e.g. Arabic) - English (acceptably fluent)
+% exefle: foreign - literal English - fluent English
+% exeale: no italics foreign (e.g. Arabic) - literal English - fluent English
+% exeft:  foreign - transliterated foreign
+% exeat:  no italics foreign (e.g. Arabic) - transliterated foreign
+% exeftl: foreign - transliterated foreign - literal translation (glosses)
+% exeatl: no italics foreign - transliterated foreign - literal translation
+% exefte:  foreign - transliterated foreign - English (acceptably fluent)
+% exeate:  no italics foreign - transliterated - English (acceptably fluent)
+% exeftle: foreign - transliterated - literal English - fluent English
+% exeatle: no italics foreign - transliterated - literal - fluent English
+% pex...: the example is in parentheses
+% Usage: \exef{in this house}
+\newcommand{\exef}[1]{\textit{#1}}
+\newcommand{\pexef}[1]{\textit{(#1)}}
+\newcommand{\exea}[1]{#1}
+\newcommand{\pexea}[1]{(#1)}
+\newcommand{\exee}[1]{``{#1}''}
+\newcommand{\pexee}[1]{(``{#1}'')}
+% Usage: \exeft{\ru{после обеда}}{posle obeda}
+\newcommand{\exeft}[2]{\textit{#1 (#2)}}
+\newcommand{\pexeft}[2]{\textit{(#1 \slash{} #2)}}
+% Usage: \exeat{\ar{کرد~خواهند}}{xwāhand kard}
+\newcommand{\exeat}[2]{#1 \textit{(#2)}}
+\newcommand{\pexeat}[2]{(#1 \slash{} \textit{#2)}}
+% Usage: \exefl{il mio paese}{the my country}
+\newcommand{\exefl}[2]{\textit{#1} (lit. \textit{#2})}
+\newcommand{\pexefl}[2]{(\textit{#1}, lit. \textit{#2})}
+% Usage: \exeal{\ar{کرد~خواهند}}{will do}
+\newcommand{\exeal}[2]{#1 (lit. \textit{#2})}
+\newcommand{\pexeal}[2]{(#1, lit. \textit{#2})}
+% Usage: \exefe{in diesem Haus}{in this house}
+\newcommand{\exefe}[2]{\textit{#1} ``#2''}
+\newcommand{\pexefe}[2]{(\textit{#1} ``#2'')}
+% Usage: \exeae{\ar{کرد~خواهند}}{they will do}
+\newcommand{\exeae}[2]{#1 ``#2''}
+\newcommand{\pexeae}[2]{(#1 ``#2'')}
+% Usage: \exefle{Trochu mu závidí.}{A-little him envies.}{She is a bit envious of him.}
+\newcommand{\exefle}[3]{\textit{#1} (lit. \textit{#2}) ``#3''}
+\newcommand{\pexefle}[3]{(\textit{#1}, lit. \textit{#2}, ``#3'')}
+% Usage: \exeale{\ar{کرد~خواهند}}{will do}{they will do}
+\newcommand{\exeale}[3]{#1 (lit. \textit{#2}) ``#3''}
+\newcommand{\pexeale}[3]{(#1, lit. \textit{#2}, ``#3'')}
+% Usage: \exeftl{\ru{после обеда}}{posle obeda}{after lunch}
+\newcommand{\exeftl}[3]{\textit{#1 (#2)} (lit. \textit{#3})}
+\newcommand{\pexeftl}[3]{(\textit{#1, #2}, lit. \textit{#3})}
+% Usage: \exeatl{\ar{کرد~خواهند}}{xwāhand kard}{will do}
+\newcommand{\exeatl}[3]{#1 \textit{(#2)} (lit. \textit{#3})}
+\newcommand{\pexeatl}[3]{(#1, \textit{#2}, lit. \textit{#3})}
+% Usage: \exefte{\ru{после обеда}}{posle obeda}{afternoon}
+\newcommand{\exefte}[3]{\textit{#1 (#2)} ``#3''}
+\newcommand{\pexefte}[3]{(\textit{#1, #2} ``#3'')}
+% Usage: \exeate{\ar{کرد~خواهند}}{xwāhand kard}{they will do}
+\newcommand{\exeate}[3]{#1 \textit{(#2)} ``#3''}
+\newcommand{\pexeate}[3]{(#1, \textit{#2} ``#3'')}
+% Usage: \exeftle{\ru{после обеда}}{posle obeda}{after lunch}{afternoon}
+\newcommand{\exeftle}[4]{\textit{#1 (#2)} (lit. \textit{#3}) ``#4''}
+\newcommand{\pexeftle}[4]{(\textit{#1, #2}, lit. \textit{#3}, ``#4'')}
+% Usage: \exeatle{\ar{کرد~خواهند}}{xwāhand kard}{will do}{they will do}
+\newcommand{\exeatle}[4]{#1 \textit{(#2)} (lit. \textit{#3}) ``#4''}
+\newcommand{\pexeatle}[4]{(#1, \textit{#2}, lit. \textit{#3}, ``#4'')}
+% We also need a means of remembering where the example comes from.
+% Usage: \citexample{nl:train/001\#9} ... language nl, train data set, file 001, sentence 9
+\newcommand{\citexample}[1]{\texttt{#1}}
+
+% Formatting of UPOS tags, features, deprels.
+\newcommand{\upos}[1]{\texttt{#1}}
+% \textsf{#1} would switch to a sans-serif font but in the Computer Modern context
+% a rather wide font would be selected.
+\newfontfamily\anarfont{ARIALN.TTF}[
+    BoldFont          = ARIALNB.TTF ,
+    ItalicFont        = ARIALNI.TTF ,
+    BoldItalicFont    = ARIALNBI.TTF ]
+\newcommand{\feat}[1]{{\anarfont\footnotesize #1}}
+\newcommand{\dep}[1]{\texttt{#1}}
+\newcommand{\deptrans}[1]{\node (t) at (\matrixref.south) [yshift=-1mm] {\exee{#1}};}
+\newcommand{\xafun}[0]{\textbf{X}} % in deptrees, afun relating the subtree to its (invisible) parent (taken from the HamleDT paper)
+
+\begin{document}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Paul \& and \& Mary \& are \& running \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{5}{1}{nsubj}
+  \depedge{1}{3}{conj}
+  \depedge{3}{2}{cc}
+  \depedge{5}{4}{aux}
+  \depedge{5}{6}{punct}
+  \deproot{5}{root}
+  \depedge[edge below,edge unit distance=2.25ex]{5}{1}{nsubj}
+  \depedge[edge below]{1}{3}{conj:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{3}{nsubj}
+  \depedge[edge below]{3}{2}{cc}
+  \depedge[edge below]{5}{4}{aux}
+  \depedge[edge below]{5}{6}{punct}
+  \deproot[edge below]{5}{root}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Paul \& bought \& apples \& and \& oranges \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=2.25ex]{2}{6}{punct}
+  \depedge{2}{3}{obj}
+  \depedge{3}{5}{conj}
+  \depedge{5}{4}{cc}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{6}{punct}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{3}{5}{conj:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{5}{obj}
+  \depedge[edge below]{5}{4}{cc}
+  \deproot[edge below]{2}{root}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mary \& cooks \& and \& Jane \& watches \& TV \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=2.4ex]{2}{7}{punct}
+  \depedge{2}{5}{conj}
+  \depedge{5}{3}{cc}
+  \depedge{5}{4}{nsubj}
+  \depedge{5}{6}{obj}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=2.4ex]{2}{7}{punct}
+  \depedge[edge below]{2}{5}{conj:and}
+  \depedge[edge below]{5}{3}{cc}
+  \depedge[edge below]{5}{4}{nsubj}
+  \depedge[edge below]{5}{6}{obj}
+  \deproot[edge below]{2}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue}]{5}{root}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Do \& it \& quickly \& and \& without \& traces \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2ex]{1}{7}{punct}
+  \depedge{1}{3}{advmod}
+  \depedge{1}{2}{obj}
+  \depedge{3}{6}{conj}
+  \depedge{6}{4}{cc}
+  \depedge{6}{5}{case}
+  \deproot{1}{root}
+  \depedge[edge below,edge unit distance=2.5ex]{1}{7}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.4ex]{1}{6}{obl:without}
+  \depedge[edge below]{1}{3}{advmod}
+  \depedge[edge below]{1}{2}{obj}
+  \depedge[edge below]{3}{6}{conj:and}
+  \depedge[edge below]{6}{4}{cc}
+  \depedge[edge below]{6}{5}{case}
+  \deproot[edge below]{1}{root}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    a \& long \& and \& wide \& river \\
+  \end{deptext}
+  \depedge{5}{1}{det}
+  \depedge{5}{2}{amod}
+  \depedge{2}{4}{conj}
+  \depedge{4}{3}{cc}
+  \depedge[edge below]{5}{1}{det}
+  \depedge[edge below]{5}{2}{amod}
+  \depedge[edge below]{2}{4}{conj:and}
+  \depedge[edge below]{4}{3}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{amod}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    trains \& to \& and \& from \& Toronto \\
+  \end{deptext}
+  \depedge{1}{5}{nmod}
+  \depedge{5}{2}{case}
+  \depedge{2}{4}{conj}
+  \depedge{4}{3}{cc}
+  \depedge[edge below]{1}{5}{nmod:to\_from}
+  \depedge[edge below]{5}{2}{case}
+  \depedge[edge below]{2}{4}{conj:and}
+  \depedge[edge below]{4}{3}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{case}
+\end{dependency}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Toto \& řešení \& je \& i \& není \& dobré \& . \\
+    This \& solution \& is \& and \& is-not \& good \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{6}{2}{nsubj}
+  \depedge{6}{3}{cop}
+  \depedge{3}{5}{conj}
+  \depedge{5}{4}{cc}
+  \depedge{6}{7}{punct}
+  \deproot{6}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below]{6}{2}{nsubj}
+  \depedge[edge below]{6}{3}{cop}
+  \depedge[edge below]{3}{5}{conj:i}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below]{6}{7}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{5}{cop}
+  \deproot[edge below]{6}{root}
+\end{dependency} \\
+`This solution is both good and bad.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Toto \& řešení \& je \& i \& není \& dobré \& . \\
+    This \& solution \& is \& and \& is-not \& good \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{3}{2}{nsubj}
+  \depedge{3}{7}{punct}
+  \depedge{3}{6}{conj}
+  \depedge{6}{4}{cc}
+  \depedge{6}{5}{cop}
+  \deproot{3}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below]{3}{2}{nsubj}
+  \depedge[edge below]{3}{7}{punct}
+  \depedge[edge below]{3}{6}{conj:i}
+  \depedge[edge below]{6}{4}{cc}
+  \depedge[edge below]{6}{5}{cop}
+  \deproot[edge below]{3}{root}
+\end{dependency} \\
+`This solution is both good and bad.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Toto \& řešení \& někdy \& je \& a \& někdy \& není \& dobré \& . \\
+    This \& solution \& sometimes \& is \& and \& sometimes \& is-not \& good \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{4}{2}{nsubj}
+  \depedge{4}{3}{advmod}
+  \depedge{4}{9}{punct}
+  \depedge{4}{8}{conj}
+  \depedge{8}{5}{cc}
+  \depedge{8}{6}{advmod}
+  \depedge{8}{7}{cop}
+  \deproot{4}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below]{4}{2}{nsubj}
+  \depedge[edge below]{4}{3}{advmod}
+  \depedge[edge below]{4}{9}{punct}
+  \depedge[edge below]{4}{8}{conj:a}
+  \depedge[edge below]{8}{5}{cc}
+  \depedge[edge below]{8}{6}{advmod}
+  \depedge[edge below]{8}{7}{cop}
+  \deproot[edge below]{4}{root}
+\end{dependency} \\
+`This solution sometimes is and sometimes is not good.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Zhodnotíme \& , \& zda \& a \& jak \& budeme \& pokračovat \& v \& další \& části \& . \\
+    We-will-evaluate \& , \& whether \& and \& how \& we-will \& continue \& in \& next \& section \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.8ex]{1}{11}{punct}
+  \depedge[edge unit distance=2.5ex]{1}{7}{ccomp}
+  \depedge[edge unit distance=2.4ex]{7}{2}{punct}
+  \depedge[edge unit distance=2.25ex]{7}{3}{mark}
+  \depedge{3}{5}{conj}
+  \depedge{5}{4}{cc}
+  \depedge{7}{6}{aux}
+  \depedge{7}{10}{obl}
+  \depedge{10}{8}{case}
+  \depedge{10}{9}{amod}
+  \deproot{1}{root}
+  \depedge[edge below,edge unit distance=1.8ex]{1}{11}{punct}
+  \depedge[edge below,edge unit distance=2.5ex]{1}{7}{ccomp}
+  \depedge[edge below,edge unit distance=2.4ex]{7}{2}{punct}
+  \depedge[edge below,edge unit distance=2.25ex]{7}{3}{mark}
+  \depedge[edge below]{3}{5}{conj:a}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{advmod}
+  \depedge[edge below]{7}{6}{aux}
+  \depedge[edge below]{7}{10}{obl:v:loc}
+  \depedge[edge below]{10}{8}{case}
+  \depedge[edge below]{10}{9}{amod}
+  \deproot[edge below]{1}{root}
+\end{dependency} \\
+`We will evaluate whether and how to continue onto the next section.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Presidents \& of \& Czechia \& and \& \textcolor{blue}{(Presidents)} \& Poland \& visited \& the \& memorial \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.5ex]{7}{1}{nsubj}
+  \depedge{1}{3}{nmod}
+  \depedge{3}{2}{case}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{3}{6}{conj}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.5ex]{6}{4}{cc}
+  \depedge{7}{10}{punct}
+  \depedge{7}{9}{obj}
+  \depedge{9}{8}{det}
+  \deproot{7}{root}
+  \depedge[edge below,edge unit distance=2.5ex]{7}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{1}{5}{conj:and}
+  \depedge[edge below]{3}{2}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{2}{case}
+  \depedge[edge below]{1}{3}{nmod:of}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{6}{nmod:of}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{nsubj}
+  \depedge[edge below]{7}{10}{punct}
+  \depedge[edge below]{7}{9}{obj}
+  \depedge[edge below]{9}{8}{det}
+  \deproot[edge below]{7}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Former \& presidents \& of \& Bosnia \& and \& Herzegovina \& were \& invited \& to \& the \& event \& . \\
+  \end{deptext}
+  \depedge{2}{1}{amod}
+  \depedge[edge unit distance=1.5ex]{8}{2}{nsubj:pass}
+  \depedge{2}{4}{nmod}
+  \depedge{4}{3}{case}
+  \depedge{4}{6}{conj}
+  \depedge{6}{5}{cc}
+  \depedge{8}{7}{aux:pass}
+  \depedge{8}{12}{punct}
+  \depedge{8}{11}{obl}
+  \depedge{11}{9}{case}
+  \depedge{11}{10}{det}
+  \deproot{8}{root}
+  \depedge[edge below]{2}{1}{amod}
+  \depedge[edge below,edge unit distance=2ex]{8}{2}{nsubj:pass}
+  \depedge[edge below]{2}{4}{nmod:of}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below]{4}{6}{conj:and}
+  \depedge[edge below]{6}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{2}{6}{nmod:of}
+  \depedge[edge below]{8}{7}{aux:pass}
+  \depedge[edge below]{8}{12}{punct}
+  \depedge[edge below]{8}{11}{obl:to}
+  \depedge[edge below]{11}{9}{case}
+  \depedge[edge below]{11}{10}{det}
+  \deproot[edge below]{8}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    The \& store \& buys \& and \& sells \& cameras \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{3}{2}{nsubj}
+  \depedge{3}{7}{punct}
+  \depedge{3}{6}{obj}
+  \depedge{3}{5}{conj}
+  \depedge{5}{4}{cc}
+  \deproot{3}{root}
+  \deproot[edge below,edge unit distance=4.75ex]{3}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=4.75ex]{5}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,edge unit distance=3.75ex]{3}{7}{punct}
+  \depedge[edge below,edge unit distance=4ex]{3}{6}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{2}{nsubj}
+  \depedge[edge below]{3}{2}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{6}{obj}
+  \depedge[edge below]{3}{5}{conj:and}
+  \depedge[edge below]{5}{4}{cc}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    I \& like \& sweet \& apples \& and \& oranges \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \deproot{2}{root}
+  \depedge{2}{1}{nsubj}
+  \depedge{2}{4}{obj}
+  \depedge{4}{3}{amod}
+  \depedge{4}{6}{conj}
+  \depedge{6}{5}{cc}
+  \depedge[edge below]{2}{7}{punct}
+  \depedge[edge below]{4}{3}{amod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{3}{amod}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below]{4}{6}{conj:and}
+  \depedge[edge below]{6}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{6}{obj}
+  \deproot[edge below]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    John \& traveled \& to \& Madrid \& and \& Lisbon \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge{2}{4}{obl}
+  \depedge{4}{3}{case}
+  \depedge{4}{6}{conj}
+  \depedge{6}{5}{cc}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{7}{punct}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{3}{case}
+  \depedge[edge below]{2}{4}{obl:to}
+  \depedge[edge below]{4}{6}{conj:and}
+  \depedge[edge below]{6}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{6}{obl:to}
+  \deproot[edge below]{2}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    She \& must \& be \& bright \& and \& in \& good \& shape \& . \\
+  \end{deptext}
+  \depedge{4}{1}{nsubj}
+  \depedge{4}{2}{aux}
+  \depedge{4}{3}{cop}
+  \depedge{4}{9}{punct}
+  \depedge{4}{8}{conj}
+  \depedge{8}{5}{cc}
+  \depedge{8}{6}{case}
+  \depedge{8}{7}{amod}
+  \deproot{4}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{8}{2}{aux}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{8}{3}{cop}
+  \depedge[edge below]{4}{1}{nsubj}
+  \depedge[edge below]{4}{2}{aux}
+  \depedge[edge below]{4}{3}{cop}
+  \depedge[edge below,edge unit distance=4.2ex]{4}{9}{punct}
+  \depedge[edge below]{4}{8}{conj:and}
+  \depedge[edge below]{8}{5}{cc}
+  \depedge[edge below]{8}{6}{case}
+  \depedge[edge below]{8}{7}{amod}
+  \deproot[edge below,edge unit distance=6ex]{4}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6ex]{8}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mezi \& Sullou \& a \& Trumpem \& , \& Římem \& a \& USA \& , \& je \& rozdíl \& . \\
+    Between \& Sulla \& and \& Trump \& , \& Rome \& and \& U.S. \& , \& is \& difference \& . \\
+  \end{deptext}
+  \depedge{2}{1}{case}
+  \depedge[edge unit distance=1.33ex]{11}{2}{nmod}
+  \depedge[edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge{2}{4}{conj}
+  \depedge{4}{3}{cc}
+  \depedge{6}{5}{punct}
+  \depedge{6}{8}{conj}
+  \depedge{8}{7}{cc}
+  \depedge{8}{9}{punct}
+  \depedge{10}{12}{punct}
+  \depedge{10}{11}{nsubj}
+  \deproot{10}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{8}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.6ex]{6}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=5ex]{4}{1}{case}
+  \depedge[edge below]{2}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7ex]{11}{8}{nmod:mezi}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.6ex]{11}{6}{nmod:mezi}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.14ex]{11}{4}{nmod:mezi}
+  \depedge[edge below,edge unit distance=1.33ex]{11}{2}{nmod:mezi}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge[edge below]{2}{4}{conj:and}
+  \depedge[edge below]{4}{3}{cc}
+  \depedge[edge below]{6}{5}{punct}
+  \depedge[edge below]{6}{8}{conj:and}
+  \depedge[edge below]{8}{7}{cc}
+  \depedge[edge below]{8}{9}{punct}
+  \depedge[edge below]{10}{12}{punct}
+  \depedge[edge below]{10}{11}{nsubj}
+  \deproot[edge below]{10}{root}
+\end{dependency} \\
+`There is a difference between Sulla and Trump, Rome and the U.S.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}[column sep=3ex]
+    A \& and \& B \& and \& C \& and \& D \\
+  \end{deptext}
+  \depedge[edge unit distance=2ex]{1}{7}{conj}
+  \depedge[edge unit distance=2.25ex]{1}{5}{conj}
+  \depedge{1}{3}{conj}
+  \depedge{3}{2}{cc}
+  \depedge{5}{4}{cc}
+  \depedge{7}{6}{cc}
+  \deproot[hide label]{1}{}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{1}{3}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{3}{5}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{5}{7}{conj:nbr:and}
+  \depedge[edge below,edge unit distance=2ex]{1}{7}{conj:and}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{conj:and}
+  \depedge[edge below]{1}{3}{conj:and}
+  \depedge[edge below]{3}{2}{cc}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below]{7}{6}{cc}
+  \deproot[edge below,hide label]{1}{}
+\end{dependency} \\
+`A and B and C and D' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}[column sep=3ex]
+    A \& and \& B \& and \& C \& and \& D \\
+  \end{deptext}
+  \depedge[edge unit distance=2ex]{1}{7}{conj}
+  \depedge[edge unit distance=2.25ex]{1}{5}{conj}
+  \depedge{1}{3}{conj}
+  \depedge{3}{2}{cc}
+  \depedge{5}{4}{cc}
+  \depedge{7}{6}{cc}
+  \deproot[hide label]{1}{}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{1}{5}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{1}{3}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{5}{7}{conj:nbr:and}
+  \depedge[edge below,edge unit distance=2ex]{1}{7}{conj:and}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{conj:and}
+  \depedge[edge below]{1}{3}{conj:and}
+  \depedge[edge below]{3}{2}{cc}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below]{7}{6}{cc}
+  \deproot[edge below,hide label]{1}{}
+\end{dependency} \\
+`(A and B) and C and D' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}[column sep=3ex]
+    A \& and \& B \& and \& C \& and \& D \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{1}{5}{conj}
+  \depedge{1}{3}{conj}
+  \depedge{3}{2}{cc}
+  \depedge{5}{7}{conj}
+  \depedge{5}{4}{cc}
+  \depedge{7}{6}{cc}
+  \deproot[hide label]{1}{}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{1}{3}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{3}{5}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{5}{7}{conj:nbr:and}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{conj:and}
+  \depedge[edge below]{1}{3}{conj:and}
+  \depedge[edge below]{3}{2}{cc}
+  \depedge[edge below]{5}{7}{conj:and}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below]{7}{6}{cc}
+  \deproot[edge below,hide label]{1}{}
+\end{dependency} \\
+`A and B and (C and D)' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}[column sep=3ex]
+    A \& and \& B \& and \& C \& and \& D \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{1}{5}{conj}
+  \depedge{1}{3}{conj}
+  \depedge{3}{2}{cc}
+  \depedge{5}{7}{conj}
+  \depedge{5}{4}{cc}
+  \depedge{7}{6}{cc}
+  \deproot[hide label]{1}{}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{1}{5}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{1}{3}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{5}{7}{conj:nbr:and}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{conj:and}
+  \depedge[edge below]{1}{3}{conj:and}
+  \depedge[edge below]{3}{2}{cc}
+  \depedge[edge below]{5}{7}{conj:and}
+  \depedge[edge below]{5}{4}{cc}
+  \depedge[edge below]{7}{6}{cc}
+  \deproot[edge below,hide label]{1}{}
+\end{dependency} \\
+`(A and B) and (C and D)' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mezi \& Sullou \& a \& Trumpem \& , \& Římem \& a \& USA \& , \& je \& rozdíl \& . \\
+    Between \& Sulla \& and \& Trump \& , \& Rome \& and \& U.S. \& , \& is \& difference \& . \\
+  \end{deptext}
+  \depedge{2}{1}{case}
+  \depedge[edge unit distance=1.33ex]{11}{2}{nmod}
+  \depedge[edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge{2}{4}{conj}
+  \depedge{4}{3}{cc}
+  \depedge{6}{5}{punct}
+  \depedge{6}{8}{conj}
+  \depedge{8}{7}{cc}
+  \depedge{8}{9}{punct}
+  \depedge{10}{12}{punct}
+  \depedge{10}{11}{nsubj}
+  \deproot{10}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.86ex]{8}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.8ex]{6}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7ex]{4}{1}{case}
+  \depedge[edge below]{2}{1}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=9ex]{11}{8}{nmod:mezi}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.8ex]{11}{6}{nmod:mezi}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3ex]{11}{4}{nmod:mezi}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{2}{6}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{2}{4}{conj:nbr:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=7.5ex]{6}{8}{conj:nbr:and}
+  \depedge[edge below,edge unit distance=1.33ex]{11}{2}{nmod:mezi}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge[edge below]{2}{4}{conj:and}
+  \depedge[edge below]{4}{3}{cc}
+  \depedge[edge below]{6}{5}{punct}
+  \depedge[edge below]{6}{8}{conj:and}
+  \depedge[edge below]{8}{7}{cc}
+  \depedge[edge below]{8}{9}{punct}
+  \depedge[edge below]{10}{12}{punct}
+  \depedge[edge below]{10}{11}{nsubj}
+  \deproot[edge below]{10}{root}
+\end{dependency} \\
+`There is a difference between Sulla and Trump, Rome and the U.S.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    I \& like \& tea \& and \& you \& \textcolor{blue}{(like)} \& coffee \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.5ex]{2}{8}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{2}{5}{conj}
+  \depedge{2}{3}{obj}
+  \depedge[red,label style={red,fill=white,text=red}]{5}{4}{cc}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.5ex]{5}{7}{orphan}
+  \deproot{2}{root}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=2ex]{2}{8}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{2}{6}{conj:and}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{4}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{5}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{7}{obj}
+  \deproot[edge below,edge unit distance=4ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=4ex]{6}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Jenny \& flies \& to \& Stockholm \& and \& Kate \& \textcolor{blue}{(flies)} \& to \& Prague \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.5ex]{2}{10}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge{2}{4}{obl}
+  \depedge{4}{3}{case}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{cc}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{6}{9}{orphan}
+  \depedge{9}{8}{case}
+  \deproot{2}{root}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.5ex]{2}{10}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.8ex]{2}{7}{conj:and}
+  \depedge[edge below]{2}{4}{obl:to}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{9}{obl:to}
+  \depedge[edge below]{9}{8}{case}
+  \deproot[edge below,edge unit distance=4ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=4ex]{7}{root}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Budu \& se \& muset \& vrátit \& a \& ty \& \textcolor{blue}{(se)} \& \textcolor{blue}{(budeš)} \& \textcolor{blue}{(muset)} \& \textcolor{blue}{(vrátit)} \& se \& mnou \& . \\
+    I-will \& myself \& must \& return \& and \& you \& \textcolor{blue}{(yourself)} \& \textcolor{blue}{(you-will)} \& \textcolor{blue}{(must)} \& \textcolor{blue}{(return)} \& with \& me \& . \\
+  \end{deptext}
+  \depedge{3}{1}{aux}
+  \depedge[edge unit distance=1.2ex]{3}{13}{punct}
+  \depedge[red,label style={red,fill=white,text=red}]{3}{6}{conj}
+  \depedge[edge unit distance=6ex]{3}{4}{xcomp}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{cc}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1ex]{6}{12}{orphan}
+  \depedge{12}{11}{case}
+  \deproot[edge unit distance=4ex]{3}{root}
+  \depedge[edge unit distance=1.5ex]{4}{2}{expl:pv}
+  \depedge[edge below]{3}{1}{aux}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{9}{conj:a}
+  \depedge[edge below,edge unit distance=6ex]{3}{4}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{9}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{6}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{10}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{10}{12}{obl:s}
+  \depedge[edge below]{12}{11}{case}
+  \deproot[edge below,edge unit distance=6ex]{3}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6ex]{9}{root}
+  \depedge[edge below,edge unit distance=2.1ex]{3}{13}{punct}
+  \depedge[edge below,edge unit distance=1.5ex]{4}{2}{expl:pv}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{10}{6}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{aux}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{10}{7}{expl:pv}
+\end{dependency} \\
+`I will have to go back and you will go with me.' \\
+\end{tabular}
+%\end{comment}
+\end{document}
