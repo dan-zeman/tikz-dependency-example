@@ -738,7 +738,7 @@
   \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=4ex]{7}{root}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -760,7 +760,7 @@
   \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{9}{5}{cc}
   \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{6}{nsubj}
   \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{10}{xcomp}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{10}{12}{obl:s}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{10}{12}{obl:s:ins}
   \depedge[edge below]{12}{11}{case}
   \deproot[edge below,edge unit distance=6ex]{3}{root}
   \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6ex]{9}{root}
@@ -771,6 +771,42 @@
   \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{10}{7}{expl:pv}
 \end{dependency} \\
 `I will have to go back and you will go with me.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Trenér \& postavil \& Jágra \& na \& pravé \& křídlo \& a \& Straku \& \textcolor{blue}{(postavil)} \& na \& levé \& . \\
+    Coach \& put \& Jágr \& on \& right \& wing \& and \& Straka \& \textcolor{blue}{(put)} \& on \& left \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.5ex]{2}{12}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{2}{8}{conj}
+  \depedge[edge unit distance=2.25ex]{2}{6}{obl}
+  \depedge{2}{3}{obj}
+  \depedge{6}{4}{case}
+  \depedge{6}{5}{amod}
+  \depedge[red,label style={red,fill=white,text=red}]{8}{7}{cc}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{8}{11}{orphan}
+  \depedge{11}{10}{case}
+  \deproot[edge unit distance=4.5ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.5ex]{2}{12}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.71ex]{2}{9}{conj:a}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{6}{obl:na:acc}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{6}{4}{case}
+  \depedge[edge below]{6}{5}{amod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{9}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{7}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{11}{obl:na:acc}
+  \depedge[edge below]{11}{10}{case}
+  \deproot[edge below,edge unit distance=5.25ex]{2}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{9}{root}
+\end{dependency} \\
+`The coach put Jágr on the right wing and Straka on the left.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
