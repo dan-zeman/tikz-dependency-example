@@ -773,7 +773,7 @@
 `I will have to go back and you will go with me.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -807,6 +807,39 @@
   \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{9}{root}
 \end{dependency} \\
 `The coach put Jágr on the right wing and Straka on the left.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Durán \& sözcü \& \textcolor{blue}{(yapmaktadır)} \& ve \& Ángel \& Pintado \& da \& sayman \& görevi \& yapmaktadır \& . \\
+    Durán \& spokesman \& \textcolor{blue}{(doing)} \& and \& Ángel \& Pintado \& also \& treasurer \& duty \& doing \& . \\
+  \end{deptext}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.8ex]{1}{11}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.67ex]{1}{10}{conj}
+  \depedge[red,label style={red,fill=white,text=red}]{1}{2}{orphan}
+  \depedge[edge unit distance=2ex]{10}{4}{cc}
+  \depedge[edge unit distance=1.8ex]{10}{5}{nsubj}
+  \depedge{5}{7}{advmod:emph}
+  \depedge{5}{6}{flat}
+  \depedge{9}{8}{nmod:poss}
+  \depedge{10}{9}{obj}
+  \deproot[draw=red,fill=white,text=red,label style={fill=white,text=red},edge unit distance=5.25ex]{1}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{2}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{3}{11}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.14ex]{3}{10}{conj:ve}
+  \depedge[edge below,edge unit distance=2ex]{10}{4}{cc}
+  \depedge[edge below,edge unit distance=1.8ex]{10}{5}{nsubj}
+  \depedge[edge below]{5}{7}{advmod:emph}
+  \depedge[edge below]{5}{6}{flat}
+  \depedge[edge below]{9}{8}{nmod:poss}
+  \depedge[edge below]{10}{9}{obj}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{3}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{10}{root}
+\end{dependency} \\
+`Durán acts as spokesman and Ángel Pintado as treasurer.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
