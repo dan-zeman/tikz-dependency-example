@@ -809,7 +809,7 @@
 `The coach put Jágr on the right wing and Straka on the left.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -840,6 +840,145 @@
   \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{10}{root}
 \end{dependency} \\
 `Durán acts as spokesman and Ángel Pintado as treasurer.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Pavel \& miluje \& Petru \& více \& než \& Jirka \& \textcolor{blue}{(miluje)} \& Hanku \& . \\
+    Pavel \& loves \& Petra \& more \& than \& Jirka \& \textcolor{blue}{(loves)} \& Hanka \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.29ex]{2}{9}{punct}
+  \depedge{2}{4}{advmod}
+  \depedge{2}{3}{obj}
+  \depedge[red,label style={red,fill=white,text=red}]{4}{6}{advcl}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{mark}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{8}{orphan}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.71ex]{2}{9}{punct}
+  \depedge[edge below]{2}{4}{advmod}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{7}{advcl:než}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{mark}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{8}{obj}
+  \deproot[edge below,edge unit distance=3.75ex]{2}{root}
+\end{dependency} \\
+`Pavel loves Petra more than Jirka loves Hanka.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Pavel \& miluje \& Petru \& více \& než \& Jirka \& . \\
+    Pavel \& loves \& Petra \& more \& than \& Jirka \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge{2}{4}{advmod}
+  \depedge{2}{3}{obj}
+  \depedge{4}{6}{obl}
+  \depedge{6}{5}{case}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge[edge below]{2}{4}{advmod}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{4}{6}{obl:než}
+  \depedge[edge below]{6}{5}{case}
+  \deproot[edge below]{2}{root}
+\end{dependency} \\
+`Pavel loves Petra more than Jirka does.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Pavel \& miluje \& Petru \& více \& než \& Hanku \& . \\
+    Pavel \& loves \& Petra \& more \& than \& Hanka \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge{2}{4}{advmod}
+  \depedge{2}{3}{obj}
+  \depedge{4}{6}{obl}
+  \depedge{6}{5}{case}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge[edge below]{2}{4}{advmod}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{4}{6}{obl:než}
+  \depedge[edge below]{6}{5}{case}
+  \deproot[edge below]{2}{root}
+\end{dependency} \\
+`Pavel loves Petra more than he loves Hanka.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Atjēdzos \& , \& ka \& bez \& angļu \& valodas \& nekur \& \textcolor{blue}{(netikšu)} \& . \\
+    I-realized \& , \& that \& without \& English \& language \& nowhere \& \textcolor{blue}{(I-will-not-get)} \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{1}{9}{punct}
+  \depedge[red,label style={red,fill=white,text=red}]{1}{6}{ccomp}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{2}{punct}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{3}{mark}
+  \depedge{6}{4}{case}
+  \depedge{6}{5}{nmod}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{7}{orphan}
+  \deproot[edge unit distance=5.25ex]{1}{root}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{9}{punct}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.14ex]{1}{8}{ccomp}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{8}{2}{punct}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.8ex]{8}{3}{mark}
+  \depedge[edge below]{6}{4}{case}
+  \depedge[edge below]{6}{5}{nmod:gen}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{8}{6}{obl:bez:gen}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{8}{7}{advmod}
+  \deproot[edge below,edge unit distance=5.25ex]{1}{root}
+\end{dependency} \\
+`I realized that I will get nowhere without English.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Viņš \& ēd \& tos \& ābolus \& , \& ko \& pirms \& tam \&[6ex] \textcolor{blue}{(ēda)} \& tārpi \& . \\
+    He \& eats \& the \& apples \& , \& that \& before \& him \& \textcolor{blue}{(ate)} \& worms \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.67ex]{2}{11}{punct}
+  \depedge{2}{4}{obj}
+  \depedge{4}{3}{det}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{4}{10}{acl:relcl}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.8ex]{10}{5}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.5ex]{10}{6}{orphan}
+  \depedge{8}{7}{case}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.5ex]{10}{8}{orphan}
+  \deproot[edge unit distance=4.5ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=1.67ex]{2}{11}{punct}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.4ex]{4}{9}{acl:relcl}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{9}{5}{punct}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.2ex]{9}{4}{obj}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.5ex]{4}{6}{ref}
+  \depedge[edge below]{8}{7}{case}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{obl:pirms:dat}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{9}{10}{nsubj}
+  \deproot[edge below,edge unit distance=4.5ex]{2}{root}
+\end{dependency} \\
+`He eats the same apples which were eaten by worms before.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
