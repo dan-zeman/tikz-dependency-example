@@ -948,7 +948,7 @@
 `I realized that I will get nowhere without English.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -979,6 +979,173 @@
   \deproot[edge below,edge unit distance=4.5ex]{2}{root}
 \end{dependency} \\
 `He eats the same apples which were eaten by worms before.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    I \& am \& a \& teacher \& and \& you \& \textcolor{blue}{(are)} \& a \& student \& . \\
+  \end{deptext}
+  \depedge{4}{1}{nsubj}
+  \depedge{4}{2}{cop}
+  \depedge{4}{3}{det}
+  \depedge[edge unit distance=2.5ex]{4}{10}{punct}
+  \depedge[edge unit distance=2.4ex]{4}{9}{conj}
+  \depedge[edge unit distance=2.25ex]{9}{5}{cc}
+  \depedge[edge unit distance=2ex]{9}{6}{nsubj}
+  \depedge{9}{8}{det}
+  \deproot[edge unit distance=4.5ex]{4}{root}
+  \depedge[edge below]{4}{1}{nsubj}
+  \depedge[edge below]{4}{2}{cop}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below]{4}{10}{punct}
+  \depedge[edge below]{4}{9}{conj:and}
+  \depedge[edge below]{9}{5}{cc}
+  \depedge[edge below]{9}{6}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{7}{cop}
+  \depedge[edge below]{9}{8}{det}
+  \deproot[edge below,edge unit distance=5.25ex]{4}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{9}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Sue \& likes \& pasta \& and \& Peter \& does \& \textcolor{blue}{(like)} \& , \&[4ex] too \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.5ex]{2}{10}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge{2}{3}{obj}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{4}{cc}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{nsubj}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{6}{9}{advmod}
+  \depedge{9}{8}{punct}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{10}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{7}{conj:and}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{4}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{aux}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{9}{advmod}
+  \depedge[edge below]{9}{8}{punct}
+  \deproot[edge below,edge unit distance=5.25ex]{2}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{7}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Sue \& is \& hungry \& and \& Peter \& is \& \textcolor{blue}{(hungry)} \& , \&[4ex] too \& . \\
+  \end{deptext}
+  \depedge{3}{1}{nsubj}
+  \depedge{3}{2}{cop}
+  \depedge[edge unit distance=1.71ex]{3}{10}{punct}
+  \depedge[red,label style={red,fill=white,text=red}]{3}{6}{conj}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{4}{cc}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{nsubj}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2ex]{6}{9}{advmod}
+  \depedge{9}{8}{punct}
+  \deproot[edge unit distance=3.75ex]{3}{root}
+  \depedge[edge below]{3}{1}{nsubj}
+  \depedge[edge below]{3}{2}{cop}
+  \depedge[edge below,edge unit distance=2.14ex]{3}{10}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{7}{conj:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{4}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{cop}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{9}{advmod}
+  \depedge[edge below]{9}{8}{punct}
+  \deproot[edge below,edge unit distance=4.75ex]{3}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=4.75ex]{7}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    They \& will \&[1ex] do \&[2ex] it \& if \& they \& want \&[2ex] to \&[2ex] \textcolor{blue}{(do)} \& . \\
+  \end{deptext}
+  \depedge{3}{1}{nsubj}
+  \depedge{3}{2}{aux}
+  \depedge[edge unit distance=1.71ex]{3}{10}{punct}
+  \depedge[edge unit distance=2.25ex]{3}{7}{advcl}
+  \depedge{3}{4}{obj}
+  \depedge{7}{5}{mark}
+  \depedge{7}{6}{nsubj}
+  \depedge[red,label style={red,fill=white,text=red}]{7}{8}{xcomp}
+  \deproot[edge unit distance=3.75ex]{3}{root}
+  \depedge[edge below]{3}{1}{nsubj}
+  \depedge[edge below]{3}{2}{aux}
+  \depedge[edge below,edge unit distance=2.57ex]{3}{10}{punct}
+  \depedge[edge below]{3}{7}{advcl}
+  \depedge[edge below]{3}{4}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{4}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{6}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{9}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{mark}
+  \depedge[edge below]{7}{5}{mark}
+  \depedge[edge below]{7}{6}{nsubj}
+  \deproot[edge below,edge unit distance=5.25ex]{3}{root}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Der \& Genuß \& wurde \& von \& der \& Arbeit \& \textcolor{blue}{(geschieden)} \& , \& das \& Mittel \& \textcolor{blue}{(wurde)} \& von \& dem \& Zweck \& \textcolor{blue}{(geschieden)} \& , \& die \& Anstrengung \& \textcolor{blue}{(wurde)} \& von \& der \& Belohnung \& geschieden \& . \\
+    The \& pleasure \& was \& from \& the \& work \& \textcolor{blue}{(distinguished)} \& , \& the \& means \& \textcolor{blue}{(was)} \& from \& the \& goal \& \textcolor{blue}{(distinguished)} \& , \& the \& effort \& \textcolor{blue}{(was)} \& from \& the \& reward \& distinguished \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge[red,label style={red,fill=white,text=red}]{3}{2}{nsubj:pass}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=0.86ex]{3}{24}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=0.75ex]{3}{23}{conj}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.71ex]{3}{10}{conj}
+  \depedge[red,label style={red,fill=white,text=red}]{3}{6}{obl}
+  \depedge{6}{5}{case}
+  \depedge{6}{4}{det}
+  \depedge[red,label style={red,fill=white,text=red}]{10}{8}{punct}
+  \depedge{10}{9}{det}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.25ex]{10}{14}{orphan}
+  \depedge{14}{12}{case}
+  \depedge{14}{13}{det}
+  \depedge[edge unit distance=1.71ex]{23}{16}{punct}
+  \depedge{18}{17}{det}
+  \depedge[edge unit distance=1.8ex]{23}{18}{nsubj:pass}
+  \depedge{22}{20}{case}
+  \depedge{22}{21}{det}
+  \depedge{23}{22}{obl}
+  \deproot[draw=red,fill=white,text=red,label style={fill=white,text=red},edge unit distance=5.25ex]{3}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.4ex]{7}{2}{nsubj:pass}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{7}{3}{aux:pass}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{obl:von:dat}
+  \depedge[edge below]{6}{5}{case}
+  \depedge[edge below]{6}{4}{det}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.41ex]{7}{24}{punct}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.31ex]{7}{23}{conj:und}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{7}{15}{conj:und}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.14ex]{15}{8}{punct}
+  \depedge[edge below]{10}{9}{det}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.4ex]{15}{10}{nsubj:pass}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{15}{11}{aux:pass}
+  \depedge[edge below]{14}{12}{case}
+  \depedge[edge below]{14}{13}{det}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue}]{15}{14}{obl:von:dat}
+  \depedge[edge below,edge unit distance=2.14ex]{23}{16}{punct}
+  \depedge[edge below]{18}{17}{det}
+  \depedge[edge below,edge unit distance=2.4ex]{23}{18}{nsubj:pass}
+  \depedge[edge below,edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{23}{19}{aux:pass}
+  \depedge[edge below]{22}{20}{case}
+  \depedge[edge below]{22}{21}{det}
+  \depedge[edge below]{23}{22}{obl:von:dat}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{7}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{15}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{23}{root}
+\end{dependency} \\
+`The pleasure was distinguished from the work, the means from the goal, the effort from the reward.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
