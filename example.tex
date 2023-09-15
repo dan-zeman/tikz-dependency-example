@@ -1091,7 +1091,7 @@
   \deproot[edge below,edge unit distance=5.25ex]{3}{root}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1146,6 +1146,74 @@
   \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{23}{root}
 \end{dependency} \\
 `The pleasure was distinguished from the work, the means from the goal, the effort from the reward.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Soňa \& má \& ráda \& těstoviny \& a \& Petr \& \textcolor{blue}{(má)} \& \textcolor{blue}{(rád)} \& také \& . \\
+    Soňa \& has \& glad \& pasta \& and \& Petr \& \textcolor{blue}{(has)} \& \textcolor{blue}{(glad)} \& too \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.5ex]{2}{10}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.25ex]{2}{6}{conj}
+  \depedge{2}{4}{obj}
+  \depedge{2}{3}{xcomp}
+  \depedge[red,label style={red,fill=white,text=red}]{6}{5}{cc}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1ex]{6}{9}{orphan}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{10}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{7}{conj:a}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{4}{obj}
+  \deproot[edge below,edge unit distance=5.25ex]{2}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=5.25ex]{7}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{3}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{3}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{8}{6}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{6}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{9}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{8}{xcomp}
+\end{dependency} \\
+`Soňa likes pasta and Petr does, too.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Soňa \& má \& ráda \& těstoviny \& , \& ale \& Petr \& ne \& \textcolor{blue}{(má)} \& \textcolor{blue}{(rád)} \& . \\
+    Soňa \& has \& glad \& pasta \& , \& but \& Petr \& not \& \textcolor{blue}{(has)} \& \textcolor{blue}{(glad)} \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.33ex]{2}{11}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=1.8ex]{2}{7}{conj}
+  \depedge{2}{4}{obj}
+  \depedge{2}{3}{xcomp}
+  \depedge[red,label style={red,fill=white,text=red}]{7}{5}{punct}
+  \depedge[red,label style={red,fill=white,text=red}]{7}{6}{cc}
+  \depedge[red,label style={red,fill=white,text=red}]{7}{8}{orphan}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,edge unit distance=2.67ex]{2}{11}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{9}{conj:ale}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{4}{obj}
+  \deproot[edge below,edge unit distance=6.75ex]{2}{root}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{9}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{3}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{3}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{10}{7}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{5}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{6}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{7}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{10}{xcomp}
+\end{dependency} \\
+`Soňa likes pasta but Petr doesn't.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
