@@ -1181,7 +1181,7 @@
 `Soňa likes pasta and Petr does, too.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1215,5 +1215,95 @@
 \end{dependency} \\
 `Soňa likes pasta but Petr doesn't.' \\
 \end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mary \& wants \& to \& buy \& a \& book \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge{2}{4}{xcomp}
+  \depedge{4}{3}{mark}
+  \depedge{4}{6}{obj}
+  \depedge{6}{5}{det}
+  \deproot{2}{root}
+  \deproot[edge below,edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,edge unit distance=2.4ex]{2}{7}{punct}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{4}{xcomp}
+  \depedge[edge below]{4}{3}{mark}
+  \depedge[edge below]{4}{6}{obj}
+  \depedge[edge below]{6}{5}{det}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    She \& seems \& to \& be \& reading \& a \& book \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=2ex]{2}{8}{punct}
+  \depedge{2}{5}{xcomp}
+  \depedge{5}{3}{mark}
+  \depedge{5}{4}{aux}
+  \depedge{5}{7}{obj}
+  \depedge{7}{6}{det}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \deproot[edge below,edge unit distance=4.5ex]{2}{root}
+  \depedge[edge below,edge unit distance=2.5ex]{2}{8}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{5}{xcomp}
+  \depedge[edge below]{5}{3}{mark}
+  \depedge[edge below]{5}{4}{aux}
+  \depedge[edge below]{5}{7}{obj}
+  \depedge[edge below]{7}{6}{det}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mary \& made \& me \&[6ex] buy \& the \& house \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge{2}{4}{xcomp}
+  \depedge{2}{3}{obj}
+  \depedge{4}{6}{obj}
+  \depedge{6}{5}{det}
+  \deproot{2}{root}
+  \depedge[edge below,edge unit distance=1.8ex]{2}{7}{punct}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{4}{xcomp}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{3}{nsubj:xsubj}
+  \depedge[edge below]{4}{6}{obj}
+  \depedge[edge below]{6}{5}{det}
+  \deproot[edge below]{2}{root}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Mary \& wants \& me \& to \& be \& promoted \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=2.4ex]{2}{7}{punct}
+  \depedge[edge unit distance=2.25ex]{2}{6}{xcomp}
+  \depedge{2}{3}{obj}
+  \depedge{6}{4}{mark}
+  \depedge{6}{5}{aux:pass}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{7}{punct}
+  \depedge[edge below]{2}{6}{xcomp}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{3}{nsubj:pass:xsubj}
+  \depedge[edge below]{6}{4}{mark}
+  \depedge[edge below]{6}{5}{aux:pass}
+  \deproot[edge below,edge unit distance=4.5ex]{2}{root}
+\end{dependency} \\
 %\end{comment}
 \end{document}
