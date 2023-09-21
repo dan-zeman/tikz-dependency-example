@@ -1284,7 +1284,7 @@
   \deproot[edge below]{2}{root}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
     Mary \& wants \& me \& to \& be \& promoted \& . \\
@@ -1305,5 +1305,81 @@
   \depedge[edge below]{6}{5}{aux:pass}
   \deproot[edge below,edge unit distance=4.5ex]{2}{root}
 \end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Susan \& became \& a \& teacher \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge{2}{5}{punct}
+  \depedge{2}{4}{xcomp}
+  \depedge{4}{3}{det}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=4ex]{2}{5}{punct}
+  \depedge[edge below]{2}{4}{xcomp}
+  \depedge[edge below]{4}{3}{det}
+  \deproot[edge below,edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{1}{nsubj:xsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    She \& declared \& the \& cake \&[2ex] beautiful \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge{2}{6}{punct}
+  \depedge{2}{5}{xcomp}
+  \depedge{2}{4}{obj}
+  \depedge{4}{3}{det}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{6}{punct}
+  \depedge[edge below]{2}{5}{xcomp}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below]{4}{3}{det}
+  \deproot[edge below,edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{nsubj:xsubj}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+% # sent_id = isst_tanl-790
+% # text = E le autorità di Zagabria hanno proibito ai giornalisti di andare a Petrinja e nelle altre località appena riconquistate.
+  \begin{deptext}
+    Le \& autorità \& hanno \& proibito \& a \& i \& giornalisti \& di \& andare \& a \& Petrinja \& . \\
+    The \& authorities \& have \& forbidden \& to \& the \& journalists \& to \& go \& to \& Petrinja \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{4}{2}{nsubj}
+  \depedge{4}{3}{aux}
+  \depedge[edge unit distance=1.88ex]{4}{12}{punct}
+  \depedge[edge unit distance=2.4ex]{4}{9}{xcomp}
+  \depedge{4}{7}{obl}
+  \depedge{7}{5}{case}
+  \depedge{7}{6}{det}
+  \depedge{9}{8}{mark}
+  \depedge{9}{11}{obl}
+  \depedge{11}{10}{case}
+  \deproot[edge unit distance=4.5ex]{4}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below]{4}{2}{nsubj}
+  \depedge[edge below]{4}{3}{aux}
+  \depedge[edge below,edge unit distance=1.88ex]{4}{12}{punct}
+  \depedge[edge below,edge unit distance=2.4ex]{4}{9}{xcomp}
+  \depedge[edge below]{4}{7}{obl:a}
+  \depedge[edge below]{7}{5}{case}
+  \depedge[edge below]{7}{6}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{7}{nsubj:xsubj}
+  \depedge[edge below]{9}{8}{mark}
+  \depedge[edge below]{9}{11}{obl:a}
+  \depedge[edge below]{11}{10}{case}
+  \deproot[edge below,edge unit distance=4.5ex]{4}{root}
+\end{dependency} \\
+`The authorities have forbidden journalists to go to Petrinja.' \\
+\end{tabular}
 %\end{comment}
 \end{document}
