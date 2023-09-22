@@ -1344,7 +1344,7 @@
   \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{nsubj:xsubj}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
 % # sent_id = isst_tanl-790
@@ -1381,5 +1381,55 @@
 \end{dependency} \\
 `The authorities have forbidden journalists to go to Petrinja.' \\
 \end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \textcolor{blue}{(my)} \& Nechceme \& konkurovat \& stanici \& Praha \& . \\
+    \textcolor{blue}{(we)} \& Not-want \& to-compete \& radio \& Prague \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.5ex]{2}{6}{punct}
+  \depedge{2}{3}{xcomp}
+  \depedge{3}{4}{obl:arg}
+  \depedge{4}{5}{nmod}
+  \deproot{2}{root}
+  \deproot[edge below]{2}{root}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{6}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{1}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{1}{nsubj}
+  \depedge[edge below]{2}{3}{xcomp}
+  \depedge[edge below]{3}{4}{obl:arg:dat}
+  \depedge[edge below]{4}{5}{nmod:nom}
+\end{dependency} \\
+`We do not want to compete with Radio Prague.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    I \&[3ex] went \&[3ex] there \& to \&[3ex] eat \& and \& drink \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.5ex]{2}{8}{punct}
+  \depedge[edge unit distance=2ex]{2}{5}{advcl}
+  \depedge{2}{3}{advmod}
+  \depedge{5}{4}{mark}
+  \depedge{5}{7}{conj}
+  \depedge{7}{6}{cc}
+  \deproot{2}{root}
+  \depedge[edge below,edge unit distance=3.5ex]{2}{8}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{1}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{5}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.4ex]{2}{7}{advcl:to}
+  \depedge[edge below]{2}{5}{advcl:to}
+  \depedge[edge below,edge unit distance=4.5ex]{5}{7}{conj:and}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{7}{4}{mark}
+  \depedge[edge below]{5}{4}{mark}
+  \depedge[edge below]{2}{3}{advmod}
+  \depedge[edge below]{7}{6}{cc}
+  \deproot[edge below,edge unit distance=6ex]{2}{root}
+\end{dependency} \\
 %\end{comment}
 \end{document}
