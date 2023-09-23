@@ -1467,7 +1467,7 @@
   \depedge[edge below]{12}{11}{det}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
     She \& is \& suspected \& of \& having \& been \& a \& member \& of \& Al \& Qaeda \& . \\
@@ -1498,5 +1498,48 @@
   \depedge[edge below]{11}{10}{compound}
   \deproot[edge below,edge unit distance=6ex]{3}{root}
 \end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    She \& entered \& the \& room \& sad \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge{2}{6}{punct}
+  \depedge{2}{5}{advcl}
+  \depedge{2}{4}{obj}
+  \depedge{4}{3}{det}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,edge unit distance=3.75ex]{2}{6}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{5}{advcl}
+  \depedge[edge below]{2}{4}{obj}
+  \depedge[edge below]{4}{3}{det}
+  \deproot[edge below,edge unit distance=4.5ex]{2}{root}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \textcolor{blue}{(ona)} \& Vstoupila \& do \& místnosti \& smutná \& . \\
+    \textcolor{blue}{(she)} \& Entered \& to \& room \& sad \& . \\
+  \end{deptext}
+  \depedge{2}{6}{punct}
+  \depedge{2}{5}{advcl}
+  \depedge{2}{4}{obl}
+  \depedge{4}{3}{case}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \depedge[edge below,edge unit distance=3.75ex]{2}{6}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{1}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{1}{nsubj}
+  \depedge[edge below]{2}{5}{advcl}
+  \depedge[edge below]{2}{4}{obl:do:gen}
+  \depedge[edge below]{4}{3}{case}
+  \deproot[edge below,edge unit distance=4.5ex]{2}{root}
+\end{dependency} \\
+`She entered the room sad.' \\
+\end{tabular}
 %\end{comment}
 \end{document}
