@@ -1405,7 +1405,7 @@
 `We do not want to compete with Radio Prague.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
     I \&[3ex] went \&[3ex] there \& to \&[3ex] eat \& and \& drink \& . \\
@@ -1430,6 +1430,73 @@
   \depedge[edge below]{2}{3}{advmod}
   \depedge[edge below]{7}{6}{cc}
   \deproot[edge below,edge unit distance=6ex]{2}{root}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Having \& driven \& with \& you \& I \&[4ex] feel \& confident \& you \& will \& pass \& the \& test \& . \\
+  \end{deptext}
+  \depedge{2}{1}{aux}
+  \depedge[edge unit distance=2.25ex]{6}{2}{advcl}
+  \depedge{2}{4}{obl}
+  \depedge{4}{3}{case}
+  \depedge{6}{5}{nsubj}
+  \depedge[edge unit distance=1.71ex]{6}{13}{punct}
+  \depedge{6}{7}{xcomp}
+  \depedge{7}{10}{ccomp}
+  \depedge{10}{8}{nsubj}
+  \depedge{10}{9}{aux}
+  \depedge{10}{12}{obj}
+  \depedge{12}{11}{det}
+  \deproot[edge unit distance=3.75ex]{6}{root}
+  \depedge[edge below]{2}{1}{aux}
+  \depedge[edge below]{6}{2}{advcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{5}{nsubj:xsubj}
+  \depedge[edge below]{2}{4}{obl}
+  \depedge[edge below]{4}{3}{case}
+  \deproot[edge below,edge unit distance=3.75ex]{6}{root}
+  \depedge[edge below,edge unit distance=1.71ex]{6}{13}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{5}{nsubj:xsubj}
+  \depedge[edge below]{6}{5}{nsubj}
+  \depedge[edge below]{6}{7}{xcomp}
+  \depedge[edge below]{7}{10}{ccomp}
+  \depedge[edge below]{10}{8}{nsubj}
+  \depedge[edge below]{10}{9}{aux}
+  \depedge[edge below]{10}{12}{obj}
+  \depedge[edge below]{12}{11}{det}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    She \& is \& suspected \& of \& having \& been \& a \& member \& of \& Al \& Qaeda \& . \\
+  \end{deptext}
+  \depedge{3}{1}{nsubj:pass}
+  \depedge{3}{2}{aux:pass}
+  \depedge[edge unit distance=2ex]{3}{12}{punct}
+  \depedge{3}{8}{advcl}
+  \depedge{8}{4}{mark}
+  \depedge{8}{5}{aux}
+  \depedge{8}{6}{cop}
+  \depedge{8}{7}{det}
+  \depedge{8}{11}{nmod}
+  \depedge{11}{9}{case}
+  \depedge{11}{10}{compound}
+  \deproot[edge unit distance=5.25ex]{3}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.57ex]{8}{1}{nsubj:xsubj}
+  \depedge[edge below]{3}{1}{nsubj:pass}
+  \depedge[edge below]{3}{2}{aux:pass}
+  \depedge[edge below,edge unit distance=2.33ex]{3}{12}{punct}
+  \depedge[edge below]{3}{8}{advcl:of}
+  \depedge[edge below]{8}{4}{mark}
+  \depedge[edge below]{8}{5}{aux}
+  \depedge[edge below]{8}{6}{cop}
+  \depedge[edge below]{8}{7}{det}
+  \depedge[edge below]{8}{11}{nmod:of}
+  \depedge[edge below]{11}{9}{case}
+  \depedge[edge below]{11}{10}{compound}
+  \deproot[edge below,edge unit distance=6ex]{3}{root}
 \end{dependency} \\
 %\end{comment}
 \end{document}
