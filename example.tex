@@ -1519,7 +1519,7 @@
   \deproot[edge below,edge unit distance=4.5ex]{2}{root}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1540,6 +1540,56 @@
   \deproot[edge below,edge unit distance=4.5ex]{2}{root}
 \end{dependency} \\
 `She entered the room sad.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Nechtělo \& se     \& mu  \&[4ex] pracovat \& . \\
+    Not-want \& itself \& him \&[4ex] to-work \& . \\
+  \end{deptext}
+  \depedge{1}{5}{punct}
+  \depedge{1}{4}{csubj:pass}
+  \depedge{1}{3}{obl:arg}
+  \depedge{1}{2}{expl:pass}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge below]{1}{5}{punct}
+  \depedge[edge below]{1}{4}{csubj:pass}
+  \depedge[edge below]{1}{3}{obl:arg:dat}
+  \depedge[edge below]{1}{2}{expl:pass}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{3}{nsubj:xsubj}
+  \deproot[edge below,edge unit distance=3.75ex]{1}{root}
+\end{dependency} \\
+`He didn't feel like working.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Hij \& had \& moeite \& om \& zich \& te \& concentreren \& . \\
+    He \& had \& trouble \& so \& himself \& to \& concentrate \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=2.5ex]{2}{8}{punct}
+  \depedge{2}{3}{obj}
+  \depedge{3}{7}{acl}
+  \depedge{7}{4}{mark}
+  \depedge{7}{5}{expl:pv}
+  \depedge{7}{6}{mark}
+  \deproot[edge unit distance=4.5ex]{2}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.5ex]{7}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{8}{punct}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{3}{7}{acl:om\_te}
+  \depedge[edge below]{7}{4}{mark}
+  \depedge[edge below]{7}{5}{expl:pv}
+  \depedge[edge below]{7}{6}{mark}
+  \deproot[edge below,edge unit distance=5.25ex]{2}{root}
+\end{dependency} \\
+`He had trouble concentrating.' \\
 \end{tabular}
 %\end{comment}
 \end{document}
