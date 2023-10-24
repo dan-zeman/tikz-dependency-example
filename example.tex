@@ -1564,7 +1564,7 @@
 `He didn't feel like working.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1591,5 +1591,79 @@
 \end{dependency} \\
 `He had trouble concentrating.' \\
 \end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \textcolor{blue}{(já)} \& Říkám \& to \& jako \& učitel  \& . \\
+    \textcolor{blue}{(I)}  \& Say   \& it \& as   \& teacher \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{2}{6}{punct}
+  \depedge[edge unit distance=2ex]{2}{5}{advcl}
+  \depedge{2}{3}{obj}
+  \depedge{5}{4}{mark}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{6}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{5}{1}{nsubj:xsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{1}{nsubj}
+  \depedge[edge below,edge unit distance=2ex]{2}{5}{advcl:jako}
+  \depedge[edge below]{2}{3}{obj}
+  \depedge[edge below]{5}{4}{mark}
+  \deproot[edge below,edge unit distance=3.75ex]{2}{root}
+\end{dependency} \\
+`I am saying this as a teacher.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Říkám \& ti  \& to \& jako \& učiteli \& . \\
+    I-say \& you \& it \& as   \& teacher \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2.4ex]{1}{6}{punct}
+  \depedge[edge unit distance=2.25ex]{1}{5}{advcl}
+  \depedge{1}{3}{obj}
+  \depedge{1}{2}{obl:arg}
+  \depedge{5}{4}{mark}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge below]{1}{6}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{2}{nsubj:xsubj}
+  \depedge[edge below]{1}{5}{advcl:jako}
+  \depedge[edge below]{1}{3}{obj}
+  \depedge[edge below]{1}{2}{obl:arg}
+  \depedge[edge below]{5}{4}{mark}
+  \deproot[edge below,edge unit distance=4.5ex]{1}{root}
+\end{dependency} \\
+`I am saying this to you$_i$ as a teacher$_i$.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Váží         \& si         \& ho  \& jako \& učitele \& . \\
+    They-respect \& themselves \& him \& as   \& teacher \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=2.4ex]{1}{6}{punct}
+  \depedge[edge unit distance=2.25ex]{1}{5}{advcl}
+  \depedge{1}{3}{obl:arg}
+  \depedge{1}{2}{expl:pv}
+  \depedge{5}{4}{mark}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge below,edge unit distance=2.4ex]{1}{6}{punct}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{advcl:jako}
+  \depedge[edge below]{1}{3}{obl:arg}
+  \depedge[edge below]{1}{2}{expl:pv}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{3}{nsubj:xsubj}
+  \depedge[edge below]{5}{4}{mark}
+  \deproot[edge below,edge unit distance=3.75ex]{1}{root}
+\end{dependency} \\
+`They respect him as a teacher.' \\
+\end{tabular}
 %\end{comment}
+
+
+
 \end{document}
