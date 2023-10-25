@@ -1639,7 +1639,7 @@
 `I am saying this to you$_i$ as a teacher$_i$.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1661,6 +1661,48 @@
   \deproot[edge below,edge unit distance=3.75ex]{1}{root}
 \end{dependency} \\
 `They respect him as a teacher.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Nemluvila \& o \& něm \& jako \& o \& otci \& , \& ale \& \textcolor{blue}{(mluvila)} \& jako \& o \& matčinu \& příteli \& . \\
+    She-talked-not \& about \& him \& as \& about \& father \& , \& but \& \textcolor{blue}{(she-talked)} \& as \& about \& mother's \& friend \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.62ex]{1}{14}{punct}
+  \depedge[edge unit distance=1.8ex]{1}{6}{advcl}
+  \depedge{1}{3}{obl:arg}
+  \depedge{3}{2}{case}
+  \depedge{6}{4}{mark}
+  \depedge{6}{5}{case}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.57ex]{6}{13}{conj}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.5ex]{13}{7}{punct}
+  \depedge[red,label style={red,fill=white,text=red},edge unit distance=2.4ex]{13}{8}{cc}
+  \depedge{13}{10}{mark}
+  \depedge{13}{11}{case}
+  \depedge{13}{12}{amod}
+  \deproot[edge unit distance=6ex]{1}{root}
+  \depedge[edge below,edge unit distance=1.85ex]{1}{14}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.62ex]{1}{9}{conj}
+  \depedge[edge below]{1}{3}{obl:arg:o:loc}
+  \depedge[edge below]{3}{2}{case}
+  \depedge[edge below]{6}{4}{mark}
+  \depedge[edge below]{6}{5}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{7}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{8}{cc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{13}{advcl:jako}
+  \deproot[edge below,draw=blue,fill=white,text=blue,label style={fill=white,text=blue},edge unit distance=6.75ex]{9}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.8ex]{13}{3}{nsubj:xsubj}
+  \depedge[edge below]{1}{6}{advcl:jako}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{9}{3}{obl:arg:o:loc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{3}{nsubj:xsubj}
+  \depedge[edge below]{13}{10}{mark}
+  \depedge[edge below]{13}{11}{case}
+  \depedge[edge below]{13}{12}{amod}
+  \deproot[edge below,edge unit distance=6.75ex]{1}{root}
+\end{dependency} \\
+`She referred to him as mother's friend, not as father.' \\
 \end{tabular}
 %\end{comment}
 
