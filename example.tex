@@ -1663,7 +1663,7 @@
 `They respect him as a teacher.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1683,7 +1683,7 @@
 \end{dependency} \\
 `He speaks like some kind of teacher.' \\
 \end{tabular}
-%\end{comment}
+\end{comment}
 \begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
@@ -1726,6 +1726,28 @@
 `She referred to him as mother's friend, not as father.' \\
 \end{tabular}
 \end{comment}
+%\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    The \& table \& is \& easy \& to \& clean \& . \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{4}{2}{nsubj}
+  \depedge{4}{3}{cop}
+  \depedge{4}{7}{punct}
+  \depedge{4}{6}{ccomp}
+  \depedge{6}{5}{mark}
+  \deproot{4}{root}
+  \deproot[edge below,edge unit distance=4ex]{4}{root}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{6}{2}{obj:xobj}
+  \depedge[edge below]{4}{2}{nsubj}
+  \depedge[edge below]{4}{3}{cop}
+  \depedge[edge below]{4}{7}{punct}
+  \depedge[edge below]{4}{6}{ccomp}
+  \depedge[edge below]{6}{5}{mark}
+\end{dependency} \\
+%\end{comment}
 
 
 
