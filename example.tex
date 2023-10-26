@@ -1726,7 +1726,7 @@
 `She referred to him as mother's friend, not as father.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
     The \& table \& is \& easy \& to \& clean \& . \\
@@ -1747,6 +1747,113 @@
   \depedge[edge below]{4}{6}{ccomp}
   \depedge[edge below]{6}{5}{mark}
 \end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    the \& boy \& who \& lived \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{4}{acl:relcl}
+  \depedge{4}{3}{nsubj}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{4}{2}{nsubj}
+  \depedge[edge below]{2}{4}{acl:relcl}
+  \depedge[edge below]{4}{3}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{3}{ref}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    the \& book \& that \& I \& read \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{5}{acl:relcl}
+  \depedge{5}{3}{obj}
+  \depedge{5}{4}{nsubj}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{5}{2}{obj}
+  \depedge[edge below]{2}{5}{acl:relcl}
+  \depedge[edge below]{5}{3}{obj}
+  \depedge[edge below]{5}{4}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{3}{ref}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    the \& book \& I \& read \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{4}{acl:relcl}
+  \depedge{4}{3}{nsubj}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{4}{2}{obj}
+  \depedge[edge below]{2}{4}{acl:relcl}
+  \depedge[edge below]{4}{3}{nsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    the \& episode \& where \& Monica \& sings \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{5}{acl:relcl}
+  \depedge{5}{3}{advmod}
+  \depedge{5}{4}{nsubj}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{5}{2}{obl:in}
+  \depedge[edge below]{2}{5}{acl:relcl}
+  \depedge[edge below]{5}{3}{advmod}
+  \depedge[edge below]{5}{4}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{3}{ref}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    dům \& , \& v \& němž \& žijeme \\
+    house \& , \& in \& which \& we-live \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{1}{5}{acl:relcl}
+  \depedge[edge unit distance=2ex]{5}{2}{punct}
+  \depedge{4}{3}{case}
+  \depedge{5}{4}{obl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{5}{1}{obl:v:loc}
+  \depedge[edge below]{1}{5}{acl:relcl}
+  \depedge[edge below]{5}{2}{punct}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below]{5}{4}{obl:v:loc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{1}{4}{ref}
+\end{dependency} \\
+`the house we live in' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    muž \& , \& v \& jehož \& domě \& žijeme \\
+    man \& , \& in \& whose \& house \& we-live \\
+  \end{deptext}
+  \depedge[edge unit distance=2.4ex]{1}{6}{acl:relcl}
+  \depedge[edge unit distance=2.25ex]{6}{2}{punct}
+  \depedge{5}{3}{case}
+  \depedge{5}{4}{det}
+  \depedge{6}{5}{obl}
+  \depedge[edge below]{1}{6}{acl:relcl}
+  \depedge[edge below]{6}{2}{punct}
+  \depedge[edge below]{5}{3}{case}
+  \depedge[edge below]{5}{4}{det}
+  \depedge[edge below]{6}{5}{obl:v:loc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2.25ex]{5}{1}{nmod:gen}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1ex]{1}{4}{ref}
+\end{dependency} \\
+`the man whose house we live in' \\
+\end{tabular}
 %\end{comment}
 
 
