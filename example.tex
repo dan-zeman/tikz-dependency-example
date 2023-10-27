@@ -1832,7 +1832,7 @@
 `the house we live in' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1854,6 +1854,25 @@
 \end{dependency} \\
 `the man whose house we live in' \\
 \end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    the \& outcome \& he \& can \& hope \& for \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{5}{acl:relcl}
+  \depedge{5}{3}{nsubj}
+  \depedge{5}{4}{aux}
+  \depedge{5}{6}{obl}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{2}{6}{ref}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{5}{2}{obl:for}
+  \depedge[edge below]{2}{5}{acl:relcl}
+  \depedge[edge below]{5}{3}{nsubj}
+  \depedge[edge below]{5}{4}{aux}
+  \depedge[edge below]{5}{6}{obl:for}
+\end{dependency} \\
 %\end{comment}
 
 
