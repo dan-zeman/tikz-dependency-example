@@ -1990,7 +1990,7 @@
 `The person I gave the book to was my younger brother.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -2016,6 +2016,73 @@
   \depedge[edge below]{7}{8}{nmod}
 \end{dependency} \\
 `Seagal, whose grandmother was from Vladivostok' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Tl’éédą́ą́   \& ashkii \& ałhą́ą́’-ą́ą́  \& \textcolor{blue}{(ashkii)} \& yádoołtih  \& . \\
+    Last-night \& boy    \& snored-REL \& \textcolor{blue}{(boy)}    \& will-speak \& . \\
+  \end{deptext}
+  \depedge{3}{1}{advmod}
+  \depedge{3}{2}{nsubj}
+  \depedge[edge unit distance=1.5ex]{5}{3}{csubj:relcl}
+  \depedge{5}{6}{punct}
+  \deproot[edge unit distance=2.25ex]{5}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{4}{2}{ref}
+  \depedge[edge below]{3}{1}{advmod}
+  \depedge[edge below]{3}{2}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{3}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{4}{nsubj}
+  \depedge[edge below]{5}{6}{punct}
+  \deproot[edge below]{5}{root}
+\end{dependency} \\
+`The boy who was snoring last night will speak.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Tl’éédą́ą́   \& ashkii \& ałhą́ą́’-ą́ą́  \& yádoołtih  \& . \\
+    Last-night \& boy    \& snored-REL \& will-speak \& . \\
+  \end{deptext}
+  \depedge{3}{1}{advmod}
+  \depedge{3}{2}{nsubj}
+  \depedge{4}{3}{csubj:relcl}
+  \depedge{4}{5}{punct}
+  \deproot[edge unit distance=2.25ex]{4}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{4}{2}{nsubj}
+  \depedge[edge below]{3}{1}{advmod}
+  \depedge[edge below]{3}{2}{nsubj}
+  \depedge[edge below]{4}{3}{csubj:relcl}
+  \depedge[edge below]{4}{5}{punct}
+  \deproot[edge below]{4}{root}
+\end{dependency} \\
+`The boy who was snoring last night will speak.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Tl’éédą́ą́   \& ałhą́ą́’-ą́ąą \& ashkii \& yádoołtih  \& . \\
+    Last-night \& snored-REL \& boy    \& will-speak \& . \\
+  \end{deptext}
+  \depedge{2}{1}{advmod}
+  \depedge{3}{2}{acl:relcl}
+  \depedge{4}{3}{nsubj}
+  \depedge{4}{5}{punct}
+  \deproot[edge unit distance=1.75ex]{4}{root}
+  \depedge[edge below]{2}{1}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{2}{3}{nsubj}
+  \depedge[edge below]{3}{2}{acl:relcl}
+  \depedge[edge below]{4}{3}{nsubj}
+  \depedge[edge below]{4}{5}{punct}
+  \deproot[edge below,edge unit distance=2.25ex]{4}{root}
+\end{dependency} \\
+`The boy who was snoring last night will speak.' \\
 \end{tabular}
 %\end{comment}
 
