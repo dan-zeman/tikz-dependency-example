@@ -1855,7 +1855,7 @@
 `the man whose house we live in' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
     the \& outcome \& he \& can \& hope \& for \\
@@ -1873,6 +1873,107 @@
   \depedge[edge below]{5}{4}{aux}
   \depedge[edge below]{5}{6}{obl:for}
 \end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    He \& became \& chairman \& , \& which \& he \& still \& is \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.71ex]{2}{9}{punct}
+  \depedge{2}{3}{xcomp}
+  \depedge{3}{5}{acl:relcl}
+  \depedge{5}{4}{punct}
+  \depedge{5}{8}{cop}
+  \depedge{5}{7}{advmod}
+  \depedge{5}{6}{nsubj}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \deproot[edge below,edge unit distance=6ex]{2}{root}
+  \depedge[edge below]{2}{9}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.6ex]{3}{8}{cop}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{3}{7}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{3}{6}{nsubj}
+  \depedge[edge below,edge unit distance=4.5ex]{3}{5}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{3}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{5}{ref}
+  \depedge[edge below]{5}{4}{punct}
+  \depedge[edge below]{5}{8}{cop}
+  \depedge[edge below]{5}{7}{advmod}
+  \depedge[edge below]{5}{6}{nsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \zh{你} \& \zh{给} \& \zh{我} \& \zh{邮来} \& \zh{的} \& \zh{信} \& \zh{一半} \& \zh{都} \& \zh{是} \& \zh{英文} \& \zh{。} \\
+    Nǐ     \& gěi     \& wǒ      \& yóulái   \& de      \& xìn    \& yībàn    \& dōu     \& shì     \& yīngwén  \& .       \\
+    You    \& to      \& I       \& send     \& REL     \& letter \& half     \& all     \& be      \& English  \& .       \\
+  \end{deptext}
+  \depedge[edge unit distance=2ex]{4}{1}{nsubj}
+  \depedge{3}{2}{case}
+  \depedge{4}{3}{obl}
+  \depedge{6}{4}{acl:relcl}
+  \depedge{4}{5}{mark}
+  \depedge{7}{6}{nmod}
+  \depedge[edge unit distance=2ex]{10}{7}{nsubj}
+  \depedge{7}{8}{det}
+  \depedge{10}{9}{cop}
+  \depedge{10}{11}{punct}
+  \deproot[edge unit distance=2.25ex]{10}{root}
+  \depedge[edge below,edge unit distance=2ex]{4}{1}{nsubj}
+  \depedge[edge below]{3}{2}{case}
+  \depedge[edge below]{4}{3}{obl:\zh{给}}
+  \depedge[edge below,edge unit distance=4.5ex]{6}{4}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{6}{obj}
+  \depedge[edge below]{4}{5}{mark}
+  \depedge[edge below]{7}{6}{nmod}
+  \depedge[edge below,edge unit distance=2ex]{10}{7}{nsubj}
+  \depedge[edge below]{7}{8}{det}
+  \depedge[edge below]{10}{9}{cop}
+  \depedge[edge below]{10}{11}{punct}
+  \deproot[edge below]{10}{root}
+\end{dependency} \\
+`Half of the letters you send to me are in English.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \zh{我} \& \zh{给} \& \zh{他} \&[2ex] \zh{送} \& \zh{书} \& \zh{的} \& \zh{人} \& \zh{是} \& \zh{我} \& \zh{弟弟}        \& \zh{。} \\
+    Wǒ     \& gěi     \& tā      \&      sòng   \& shū     \& de      \& rén    \& shì     \& wǒ      \& dìdì            \& .       \\
+    I      \& to      \& he      \&      give   \& book    \& REL     \& person \& be      \& I       \& younger-brother \& .       \\
+  \end{deptext}
+  \depedge[edge unit distance=2ex]{4}{1}{nsubj}
+  \depedge{3}{2}{case}
+  \depedge{4}{3}{obl}
+  \depedge{7}{4}{acl:relcl}
+  \depedge{4}{6}{mark}
+  \depedge{4}{5}{obj}
+  \depedge{10}{7}{nsubj}
+  \depedge{10}{8}{cop}
+  \depedge{10}{9}{nmod}
+  \depedge{10}{11}{punct}
+  \deproot{10}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{7}{3}{ref}
+  \depedge[edge below,edge unit distance=2ex]{4}{1}{nsubj}
+  \depedge[edge below]{3}{2}{case}
+  \depedge[edge below]{4}{3}{obl:\zh{给}}
+  \depedge[edge below,edge unit distance=5ex]{7}{4}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{7}{obl:\zh{给}}
+  \depedge[edge below]{4}{6}{mark}
+  \depedge[edge below]{4}{5}{obj}
+  \depedge[edge below]{10}{7}{nsubj}
+  \depedge[edge below]{10}{8}{cop}
+  \depedge[edge below]{10}{9}{nmod}
+  \depedge[edge below]{10}{11}{punct}
+  \deproot[edge below,edge unit distance=4.5ex]{10}{root}
+\end{dependency} \\
+`The person I gave the book to was my younger brother.' \\
+\end{tabular}
 %\end{comment}
 
 
