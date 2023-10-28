@@ -3,8 +3,23 @@
 \usepackage{xcolor}         % typesetting in color
 \usepackage{tikz-dependency}
 \usepackage{fontspec}
+\usepackage{polyglossia} % must be loaded before bidi, not after it
+% The bidi package will try to define the commands \XeTeX and \XeLaTeX
+% but they already exist and the compiler will complain. We thus reset
+% the commands to an undefined macro here, then bidi will succeed in
+% redefining them.
+\let\XeTeX\nedefinovano
+\let\XeLaTeX\nedefinovano
+\usepackage{bidi}
+\setmainlanguage{english}
+\setotherlanguage{arabic} % we need it to support right-to-left text
+\setotherlanguage{russian} % we may need it in BibTeX
 \newfontfamily\ukfont[Script=Cyrillic]{CMU Serif}
 \newcommand{\uk}[1]{{\ukfont #1}}
+% We define \arfont following our naming convention. Polyglossia requires that we also define \arabicfont. Then we can use the command \textarabic and besides the font itself, we should also get right-to-left text.
+\newfontfamily\arabicfont[Script=Arabic]{Times New Roman}
+\newfontfamily\arfont[Script=Arabic]{Times New Roman}
+\newcommand{\ar}[1]{{\arfont \textarabic{#1}}}
 \newfontfamily\jafont[Script=CJK]{Code2000}
 \newcommand{\ja}[1]{{\jafont #1}}
 \newcommand{\zh}[1]{{\jafont #1}}
@@ -1939,7 +1954,7 @@
 `Half of the letters you send to me are in English.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -1973,6 +1988,34 @@
   \deproot[edge below,edge unit distance=4.5ex]{10}{root}
 \end{dependency} \\
 `The person I gave the book to was my younger brother.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \ar{سيغال} \& \ar{التي} \& \ar{كانت} \& \ar{جدة}    \& \ar{ه}   \& \ar{من} \& \ar{مدينة} \& \ar{فلاديفوستوك} \\
+    segal      \& alati     \& kanat     \& jidat       \& -uh      \& min     \& madinat    \& fladifustuk     \\
+    Seagal     \& which     \& was       \& grandmother \& his      \& from    \& city       \& Vladivostok     \\
+  \end{deptext}
+  \depedge[edge unit distance=2.5ex]{1}{7}{acl:relcl}
+  \depedge[edge unit distance=2ex]{5}{2}{det}
+  \depedge{7}{3}{cop}
+  \depedge{7}{4}{nsubj}
+  \depedge{4}{5}{nmod}
+  \depedge{7}{6}{case}
+  \depedge{7}{8}{nmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{1}{5}{ref}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{1}{nmod}
+  \depedge[edge below]{1}{7}{acl:relcl}
+  \depedge[edge below,edge unit distance=2ex]{5}{2}{det}
+  \depedge[edge below,edge unit distance=3.75ex]{7}{3}{cop}
+  \depedge[edge below]{7}{4}{nsubj}
+  \depedge[edge below]{4}{5}{nmod}
+  \depedge[edge below]{7}{6}{case}
+  \depedge[edge below]{7}{8}{nmod}
+\end{dependency} \\
+`Seagal, whose grandmother was from Vladivostok' \\
 \end{tabular}
 %\end{comment}
 
