@@ -20,6 +20,8 @@
 \newfontfamily\arabicfont[Script=Arabic]{Times New Roman}
 \newfontfamily\arfont[Script=Arabic]{Times New Roman}
 \newcommand{\ar}[1]{{\arfont \textarabic{#1}}}
+\newfontfamily\tafont[Script=Tamil]{Code2000}
+\newcommand{\ta}[1]{{\tafont #1}}
 \newfontfamily\jafont[Script=CJK]{Code2000}
 \newcommand{\ja}[1]{{\jafont #1}}
 \newcommand{\zh}[1]{{\jafont #1}}
@@ -2063,7 +2065,7 @@
 `The boy who was snoring last night will speak.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -2083,6 +2085,100 @@
   \deproot[edge below,edge unit distance=2.25ex]{4}{root}
 \end{dependency} \\
 `The boy who was snoring last night will speak.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \ta{நேற்று} \& \ta{வந்த} \& \ta{பையனை} \& \ta{சந்திக்கிறேன்} \& . \\
+    nēṟṟu       \& vanta     \& paiyanai       \& cantikkiṟēn       \& . \\
+    yesterday   \& came-REL  \& boy            \& I-will-meet       \& . \\
+  \end{deptext}
+  \depedge{2}{1}{advmod}
+  \depedge{3}{2}{acl:relcl}
+  \depedge{4}{3}{obj}
+  \depedge{4}{5}{punct}
+  \deproot[edge unit distance=1.75ex]{4}{root}
+  \depedge[edge below]{2}{1}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{2}{3}{nsubj}
+  \depedge[edge below]{3}{2}{acl:relcl}
+  \depedge[edge below]{4}{3}{obj}
+  \depedge[edge below]{4}{5}{punct}
+  \deproot[edge below,edge unit distance=2.25ex]{4}{root}
+\end{dependency} \\
+`I will meet the boy who came yesterday.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Podnikáním \& se \& rozumí        \& činnost  \& prováděná   \& podnikatelem    \& za  \& účelem  \& dosažení  \& zisku  \& . \\
+    Business \& itself \& understands \& activity \& carried-out \& by-entrepreneur \& for \& purpose \& of-making \& profit \& . \\
+  \end{deptext}
+  \depedge{3}{1}{xcomp}
+  \depedge{3}{2}{expl:pass}
+  \depedge[edge unit distance=1.5ex]{3}{11}{punct}
+  \depedge{3}{4}{nsubj:pass}
+  \depedge{4}{5}{acl}
+  \depedge[edge unit distance=2.25ex]{5}{9}{obl}
+  \depedge{5}{6}{obl:agent}
+  \depedge{9}{7}{case}
+  \depedge{7}{8}{fixed}
+  \depedge{9}{10}{nmod}
+  \deproot[edge unit distance=3.75ex]{3}{root}
+  \deproot[edge below,edge unit distance=3.75ex]{3}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{1}{4}{nsubj:xsubj}
+  \depedge[edge below]{3}{1}{xcomp}
+  \depedge[edge below]{3}{2}{expl:pass}
+  \depedge[edge below,edge unit distance=1.5ex]{3}{11}{punct}
+  \depedge[edge below]{3}{4}{nsubj:pass}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{5}{4}{nsubj:pass}
+  \depedge[edge below]{4}{5}{acl}
+  \depedge[edge below,edge unit distance=2.25ex]{5}{9}{obl:za\_účelem:gen}
+  \depedge[edge below]{5}{6}{obl:agent:ins}
+  \depedge[edge below]{9}{7}{case}
+  \depedge[edge below]{7}{8}{fixed}
+  \depedge[edge below]{9}{10}{nmod:gen}
+\end{dependency} \\
+`Business is an activity carried out by an entrepreneur for the purpose of making a profit.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Pod \& hřebenem \& , \& historicky  \& oddělujícím \& Čechy   \& od   \& Moravy  \& , \& povede   \& tunel  \& . \\
+    Under \& ridge  \& , \& historically \& separating \& Bohemia \& from \& Moravia \& , \& will-run \& tunnel \& . \\
+  \end{deptext}
+  \depedge{2}{1}{case}
+  \depedge[edge unit distance=1.5ex]{10}{2}{obl}
+  \depedge{2}{5}{acl}
+  \depedge{5}{3}{punct}
+  \depedge{5}{4}{advmod}
+  \depedge[edge unit distance=2.25ex]{5}{9}{punct}
+  \depedge[edge unit distance=2ex]{5}{8}{obl:arg}
+  \depedge{5}{6}{obj}
+  \depedge{8}{7}{case}
+  \depedge{10}{12}{punct}
+  \depedge{10}{11}{nsubj}
+  \deproot[edge unit distance=3.75ex]{10}{root}
+  \deproot[edge below,edge unit distance=4.5ex]{10}{root}
+  \depedge[edge below]{2}{1}{case}
+  \depedge[edge below,edge unit distance=1.88ex]{10}{2}{obl:pod:ins}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{5}{2}{nsubj}
+  \depedge[edge below]{2}{5}{acl}
+  \depedge[edge below]{5}{3}{punct}
+  \depedge[edge below]{5}{4}{advmod}
+  \depedge[edge below,edge unit distance=2.25ex]{5}{9}{punct}
+  \depedge[edge below,edge unit distance=2ex]{5}{8}{obl:arg:od:gen}
+  \depedge[edge below]{5}{6}{obj}
+  \depedge[edge below]{8}{7}{case}
+  \depedge[edge below]{10}{12}{punct}
+  \depedge[edge below]{10}{11}{nsubj}
+\end{dependency} \\
+`A tunnel will run under the ridge that historically separated Bohemia from Moravia.' \\
 \end{tabular}
 %\end{comment}
 
