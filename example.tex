@@ -13,13 +13,20 @@
 \usepackage{bidi}
 \setmainlanguage{english}
 \setotherlanguage{arabic} % we need it to support right-to-left text
+\setotherlanguage{hebrew} % we need it to support right-to-left text
 \setotherlanguage{russian} % we may need it in BibTeX
 \newfontfamily\ukfont[Script=Cyrillic]{CMU Serif}
+\newfontfamily\cktfont[Script=Cyrillic]{Times New Roman} % CMU Serif supports European Cyrillic alphabets but it lacks some Chukchi letters, so we must use Times New Roman.
 \newcommand{\uk}[1]{{\ukfont #1}}
+\newcommand{\ckt}[1]{{\cktfont #1}}
 % We define \arfont following our naming convention. Polyglossia requires that we also define \arabicfont. Then we can use the command \textarabic and besides the font itself, we should also get right-to-left text.
 \newfontfamily\arabicfont[Script=Arabic]{Times New Roman}
 \newfontfamily\arfont[Script=Arabic]{Times New Roman}
 \newcommand{\ar}[1]{{\arfont \textarabic{#1}}}
+% Similar for Hebrew.
+\newfontfamily\hebrewfont[Script=Hebrew]{Times New Roman}
+\newfontfamily\hefont[Script=Hebrew]{Times New Roman}
+\newcommand{\he}[1]{{\arfont \texthebrew{#1}}}
 \newfontfamily\tafont[Script=Tamil]{Code2000}
 \newcommand{\ta}[1]{{\tafont #1}}
 \newfontfamily\jafont[Script=CJK]{Code2000}
@@ -1892,36 +1899,6 @@
 \end{dependency} \\
 \end{comment}
 \begin{comment}
-\begin{dependency}[edge unit distance=3ex]
-  \begin{deptext}
-    He \& became \& chairman \& , \& which \& he \& still \& is \& . \\
-  \end{deptext}
-  \depedge{2}{1}{nsubj}
-  \depedge[edge unit distance=1.71ex]{2}{9}{punct}
-  \depedge{2}{3}{xcomp}
-  \depedge{3}{5}{acl:relcl}
-  \depedge{5}{4}{punct}
-  \depedge{5}{8}{cop}
-  \depedge{5}{7}{advmod}
-  \depedge{5}{6}{nsubj}
-  \deproot[edge unit distance=3.75ex]{2}{root}
-  \deproot[edge below,edge unit distance=6ex]{2}{root}
-  \depedge[edge below]{2}{9}{punct}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.6ex]{3}{8}{cop}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{3}{7}{advmod}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{3}{6}{nsubj}
-  \depedge[edge below,edge unit distance=4.5ex]{3}{5}{acl:relcl}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{1}{nsubj:xsubj}
-  \depedge[edge below]{2}{1}{nsubj}
-  \depedge[edge below]{2}{3}{xcomp}
-  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{5}{ref}
-  \depedge[edge below]{5}{4}{punct}
-  \depedge[edge below]{5}{8}{cop}
-  \depedge[edge below]{5}{7}{advmod}
-  \depedge[edge below]{5}{6}{nsubj}
-\end{dependency} \\
-\end{comment}
-\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -2145,7 +2122,7 @@
 `Business is an activity carried out by an entrepreneur for the purpose of making a profit.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   \begin{deptext}
@@ -2179,6 +2156,543 @@
   \depedge[edge below]{10}{11}{nsubj}
 \end{dependency} \\
 `A tunnel will run under the ridge that historically separated Bohemia from Moravia.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \ckt{Гым} \& \ckt{ытԓьата} \& \ckt{гэнапытӄынԓыватԓен} \& \textcolor{blue}{\ckt{(пытӄы)}} \& . \\
+    \ckt{ɣəm} \& \ckt{ətɬʔata} \& \ckt{ɣenapətqənɬəwatɬen} \& \textcolor{blue}{\ckt{(pətqə)}} \& . \\
+    me \& mother \& breast-feed-again \& \textcolor{blue}{(again)} \& . \\
+  \end{deptext}
+  \depedge{3}{1}{obj}
+  \depedge{3}{2}{nsubj}
+  \depedge{3}{5}{punct}
+  \deproot[edge unit distance=2.25ex]{3}{root}
+  \depedge[edge below]{3}{1}{obj}
+  \depedge[edge below]{3}{2}{nsubj}
+  \depedge[edge below]{3}{5}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{4}{advmod}
+  \deproot[edge below,edge unit distance=2.25ex]{3}{root}
+\end{dependency} \\
+`My mother was breast-feeding me again.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    % \exefte{\ckt{ныманэванԓясӄэвӄэнат}}{\ckt{nəmanewanɬasqewqenat}}{they constantly asked for money}
+    \ckt{ны} \& \ckt{манэ} \&[3ex] \ckt{ванԓя} \& \ckt{сӄэв} \& \ckt{ӄэнат} \\
+    \ckt{nə} \& \ckt{mane} \&      \ckt{wanɬa} \& \ckt{sqew} \& \ckt{qenat} \\
+    STATIVE \& money \& ask \& MOVEMENT.PURPOSE \& STATIVE.3SG-PL \\
+    %ST \& money \& ask \& MCP \& ST.3SG-PL \\
+    % 'ST' probably means 'stative' and it is an aspect value, contrasting with 'perfect' (see page 13 of https://chuklang.ru/static/chukchi_glosses_20171020.pdf).
+    % 'MCP' is indicator of “movement with purpose” (Показатель «движения с целью») (see page 15 of https://chuklang.ru/static/chukchi_glosses_20171020.pdf).
+    % Формы (6 шт.) статива и перфекта от непереходных глаголов идентичны формам от переходных при агенсе третьего лица множественного числа.
+  \end{deptext}
+  \depedge{3}{1}{infl}
+  \depedge{3}{2}{obj:incorp}
+  \depedge{3}{5}{infl}
+  \depedge{3}{4}{deriv}
+  \deproot{3}{root}
+\end{dependency} \\
+`they constantly asked for money' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  %  # sent_id = Money:1
+  %  # text = Ӄонпы нывичвэтчыӄивӄинэтъым ныманэванԓясӄэвӄэнат.
+  %  # text[phon] = Qonpə nəwiswetsəqiwqinetʔəm nəmanewanɬasqewqenat.
+  %  # text[rus] = Они (дети) постоянно ходили играть, постоянно просили денег.
+  %  # text[eng] = They (children) constantly went to play, constantly asked for money.
+  %  # labels = complete-dep anno-fran
+  %  1	Ӄонпы	_	ADV	_	_	2	advmod	2:advmod	Gloss=всегда
+  %  2-3	нывичвэтчыӄивӄинэтъым	_	_	_	_	_	_	_	Gloss=ST-играть-VB-MCP-ST.3SG-PL-=EMPH
+  %  2	нывичвэтчыӄивӄинэт	_	VERB	_	_	0	root	0:root	Gloss=ST-играть-VB-MCP-ST.3SG-PL
+  %  3	ъым	_	PART	_	_	2	advmod:emph	2:advmod:emph	Gloss=EMPH
+  %  4	ныманэванԓясӄэвӄэнат	_	VERB	_	_	2	parataxis	2:parataxis	Gloss=ST-деньги-просить-MCP-ST.3SG-PL|SpaceAfter=No
+  %  4.1	манэ	_	NOUN	_	_	_	_	4:obj	Gloss=деньги
+  %  5	.	_	PUNCT	_	_	2	punct	2:punct	_
+  \begin{deptext}
+    \ckt{Ӄонпы} \& \ckt{нывичвэтчыӄивӄинэт} \& \ckt{ъым} \& \ckt{ныманэванԓясӄэвӄэнат} \& \textcolor{blue}{\ckt{(манэ)}} \& \ckt{.} \\
+    \ckt{Qonpə} \& \ckt{nəwiswetsəqiwqinet} \& \ckt{ʔəm} \& \ckt{nəmanewanɬasqewqenat} \& \textcolor{blue}{\ckt{(mane)}} \& \ckt{.} \\
+    Always \& they-played \& EMPH \& they-asked-money \& \textcolor{blue}{(money)} \& . \\
+    %ST \& money \& ask \& MCP \& ST.3SG-PL \\
+    % 'ST' probably means 'stative' and it is an aspect value, contrasting with 'perfect' (see page 13 of https://chuklang.ru/static/chukchi_glosses_20171020.pdf).
+    % 'MCP' is indicator of “movement with purpose” (Показатель «движения с целью») (see page 15 of https://chuklang.ru/static/chukchi_glosses_20171020.pdf).
+    % Формы (6 шт.) статива и перфекта от непереходных глаголов идентичны формам от переходных при агенсе третьего лица множественного числа.
+  \end{deptext}
+  \depedge{2}{1}{advmod}
+  \depedge[edge unit distance=2.25ex]{2}{6}{punct}
+  \depedge{2}{4}{parataxis}
+  \depedge{2}{3}{advmod:emph}
+  \deproot{2}{root}
+  \depedge[edge below]{2}{1}{advmod}
+  \depedge[edge below,edge unit distance=2.25ex]{2}{6}{punct}
+  \depedge[edge below]{2}{4}{parataxis}
+  \depedge[edge below]{2}{3}{advmod:emph}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{5}{obj}
+  \deproot[edge below]{2}{root}
+\end{dependency} \\
+`They (children) constantly went to play, constantly asked for money.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    książka \& , \& o \& której \& mówił \& em \\
+    book \& , \& about \& which \& spoken \& I-have \\
+  \end{deptext}
+  \depedge[edge unit distance=2.25ex]{1}{5}{acl:relcl}
+  \depedge[edge unit distance=2ex]{5}{2}{punct}
+  \depedge{4}{3}{case}
+  \depedge{5}{4}{obl}
+  \depedge{5}{6}{aux:clitic}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{5}{1}{obl:o:loc}
+  \depedge[edge below]{1}{5}{acl:relcl}
+  \depedge[edge below]{5}{2}{punct}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below]{5}{4}{obl:o:loc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=2ex]{1}{4}{ref}
+  \depedge[edge below]{5}{6}{aux:clitic}
+\end{dependency} \\
+`book about which I spoke' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    \ja{私} \& \ja{が} \& \ja{話し} \& \ja{た} \& \ja{本} \\
+    watashi \& ga \& hanashi \& ta \& hon \\
+    I \& NOM \& speak \& PAST \& book \\
+  \end{deptext}
+  \depedge{3}{1}{nsubj}
+  \depedge{1}{2}{case}
+  \depedge{5}{3}{acl:relcl}
+  \depedge{3}{4}{aux}
+  \depedge[edge below]{3}{1}{nsubj}
+  \depedge[edge below]{1}{2}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{3}{5}{obl:\ja{に}}
+  \depedge[edge below]{5}{3}{acl:relcl}
+  \depedge[edge below]{3}{4}{aux}
+\end{dependency} \\
+`book about which I spoke' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % הספר שדיברתי עליו
+  \begin{deptext}
+    \he{ה} \& \he{ספר} \& \he{ש} \& \he{דיברתי} \& \he{עלי} \& \he{ו} \\
+    ha \& sefer \& she \& dibarti \& ala \& v \\
+    the \& book \& that \& I-spoke \& about \& it \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{2}{4}{acl:relcl}
+  \depedge{4}{3}{mark}
+  \depedge{4}{6}{obl}
+  \depedge{6}{5}{case}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{2}{6}{ref}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{4}{2}{obl:\he{עלי}}
+  \depedge[edge below]{2}{4}{acl:relcl}
+  \depedge[edge below]{4}{3}{mark}
+  \depedge[edge below]{4}{6}{obl:\he{עלי}}
+  \depedge[edge below]{6}{5}{case}
+\end{dependency} \\
+`book about which I spoke' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Nakita \& ko \& ang \& lalaking \& nagnakaw \& ng \& pera \& . \\
+    Saw \& I \& NOM \& man-LINK \& stole \& GEN \& money \& . \\
+  \end{deptext}
+  \deproot{1}{root}
+  \depedge[edge unit distance=1.29ex]{1}{8}{punct}
+  \depedge[edge unit distance=2ex]{1}{4}{nsubj:pass}
+  \depedge{1}{2}{obj:agent}
+  \depedge{4}{3}{case}
+  \depedge{4}{5}{acl:relcl}
+  \depedge{5}{7}{obj}
+  \depedge{7}{6}{case}
+  \deproot[edge below]{1}{root}
+  \depedge[edge below,edge unit distance=1.29ex]{1}{8}{punct}
+  \depedge[edge below,edge unit distance=2ex]{1}{4}{nsubj:pass}
+  \depedge[edge below]{1}{2}{obj:agent}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{5}{4}{nsubj}
+  \depedge[edge below]{4}{5}{acl:relcl}
+  \depedge[edge below]{5}{7}{obj}
+  \depedge[edge below]{7}{6}{case}
+\end{dependency} \\
+`I saw the man who stole the money.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Nakita \& ako \& ng \& lalaking \& nagnakaw \& ng \& pera \& . \\
+    Saw \& I \& GEN \& man-LINK \& stole \& GEN \& money \& . \\
+  \end{deptext}
+  \deproot{1}{root}
+  \depedge[edge unit distance=1.29ex]{1}{8}{punct}
+  \depedge[edge unit distance=2ex]{1}{4}{obj:agent}
+  \depedge{1}{2}{nsubj:pass}
+  \depedge{4}{3}{case}
+  \depedge{4}{5}{acl:relcl}
+  \depedge{5}{7}{obj}
+  \depedge{7}{6}{case}
+  \deproot[edge below]{1}{root}
+  \depedge[edge below,edge unit distance=1.29ex]{1}{8}{punct}
+  \depedge[edge below,edge unit distance=2ex]{1}{4}{obj:agent}
+  \depedge[edge below]{1}{2}{nsubj:pass}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{5}{4}{nsubj}
+  \depedge[edge below]{4}{5}{acl:relcl}
+  \depedge[edge below]{5}{7}{obj}
+  \depedge[edge below]{7}{6}{case}
+\end{dependency} \\
+`The man who stole the money saw me.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Nakita \& ko \& ang \& pera \& na \& ninakaw \& ng \& lalaki \& . \\
+    Saw \& I \& NOM \& money \& LINK \& stole \& GEN \& man \& . \\
+  \end{deptext}
+  \deproot{1}{root}
+  \depedge[edge unit distance=1.13ex]{1}{9}{punct}
+  \depedge[edge unit distance=2ex]{1}{4}{nsubj:pass}
+  \depedge{1}{2}{obj:agent}
+  \depedge{4}{3}{case}
+  \depedge{4}{6}{acl:relcl}
+  \depedge{6}{5}{mark}
+  \depedge{6}{8}{obj:agent}
+  \depedge{8}{7}{case}
+  \deproot[edge below,edge unit distance=3.75ex]{1}{root}
+  \depedge[edge below,edge unit distance=1.5ex]{1}{9}{punct}
+  \depedge[edge below,edge unit distance=2ex]{1}{4}{nsubj:pass}
+  \depedge[edge below]{1}{2}{obj:agent}
+  \depedge[edge below]{4}{3}{case}
+  \depedge[edge below]{6}{5}{mark}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4.5ex]{6}{4}{nsubj:pass}
+  \depedge[edge below]{4}{6}{acl:relcl}
+  \depedge[edge below]{6}{8}{obj:agent}
+  \depedge[edge below]{8}{7}{case}
+\end{dependency} \\
+`I saw the money that the man stole.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % I spoke about the book. = A könyvről beszéltem.
+  % Focus on the book. = Koncentrálj a könyvre.
+  % Koncentrálj a könyvre, amelyről beszéltem.
+  % a könyv, amiről beszéltem
+  % https://hinative.com/questions/1407005 says that in contemporary casual Hungarian, ami is preferable and amely is a more literary version.
+  \begin{deptext}
+    Koncentrálj \& a \& könvre \& , \& amiről \& beszéltem \& . \\
+    Focus \& the \& book-on \& , \& which-about \& I-spoke \& . \\
+  \end{deptext}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge unit distance=2ex]{1}{7}{punct}
+  \depedge{1}{3}{obl}
+  \depedge{3}{2}{det}
+  \depedge{3}{6}{acl:relcl}
+  \depedge{6}{4}{punct}
+  \depedge{6}{5}{obl}
+  \deproot[edge below,edge unit distance=4.5ex]{1}{root}
+  \depedge[edge below,edge unit distance=2.5ex]{1}{7}{punct}
+  \depedge[edge below]{1}{3}{obl:sbl}
+  \depedge[edge below]{3}{2}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{6}{3}{obl:del}
+  \depedge[edge below]{3}{6}{acl:relcl}
+  \depedge[edge below]{6}{4}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=1.5ex]{3}{5}{ref}
+  \depedge[edge below]{6}{5}{obl:del}
+\end{dependency} \\
+`Focus on the book I spoke about.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % He is in trouble. = Bajban van.
+  % He focuses on the trouble he is in. = Arra a bajra koncentrál, amiben van.
+  \begin{deptext}
+    \textcolor{blue}{(ő)} \& Arra \& a \& bajra \& koncentrál \& , \& amiben \& van \& . \\
+    \textcolor{blue}{(he)} \& the-on \& the \& trouble-on \& he-focuses \& , \& which-in \& he-is \& . \\
+  \end{deptext}
+  \deproot{5}{root}
+  \depedge{4}{2}{det}
+  \depedge{4}{3}{det}
+  \depedge[edge unit distance=2.25ex]{5}{9}{punct}
+  \depedge[edge unit distance=2ex]{4}{7}{acl:relcl}
+  \depedge{5}{4}{obl}
+  \depedge{7}{6}{punct}
+  \depedge{7}{8}{cop}
+  \deproot[edge below,edge unit distance=3.75ex]{5}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{1}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{1}{nsubj}
+  \depedge[edge below]{4}{2}{det}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below]{5}{9}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{7}{ref}
+  \depedge[edge below,edge unit distance=2ex]{4}{7}{acl:relcl}
+  \depedge[edge below]{5}{4}{obl:sbl}
+  \depedge[edge below]{7}{6}{punct}
+  \depedge[edge below]{7}{8}{cop}
+\end{dependency} \\
+`He focuses on the trouble he is in.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    He \& became \& chairman \& , \& which \& he \& still \& is \& . \\
+  \end{deptext}
+  \depedge{2}{1}{nsubj}
+  \depedge[edge unit distance=1.71ex]{2}{9}{punct}
+  \depedge{2}{3}{xcomp}
+  \depedge{3}{5}{acl:relcl}
+  \depedge{5}{4}{punct}
+  \depedge{5}{8}{cop}
+  \depedge{5}{7}{advmod}
+  \depedge{5}{6}{nsubj}
+  \deproot[edge unit distance=3.75ex]{2}{root}
+  \deproot[edge below,edge unit distance=5.25ex]{2}{root}
+  \depedge[edge below,edge unit distance=2.57ex]{2}{9}{punct}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{3}{7}{advmod}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{3}{6}{nsubj}
+  \depedge[edge below,edge unit distance=4.5ex]{3}{5}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{1}{nsubj:xsubj}
+  \depedge[edge below]{2}{1}{nsubj}
+  \depedge[edge below]{2}{3}{xcomp}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{3}{5}{ref}
+  \depedge[edge below]{5}{4}{punct}
+  \depedge[edge below]{5}{8}{cop}
+  \depedge[edge below]{5}{7}{advmod}
+  \depedge[edge below]{5}{6}{nsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Focus \& on \& the \& topic \& which \& this \& is \& about \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.5ex]{1}{9}{punct}
+  \depedge{1}{4}{obl}
+  \depedge{4}{2}{case}
+  \depedge{4}{3}{det}
+  \depedge{4}{5}{acl:relcl}
+  \depedge{5}{8}{case}
+  \depedge{5}{7}{cop}
+  \depedge{5}{6}{nsubj}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \deproot[edge below,edge unit distance=4.5ex]{1}{root}
+  \depedge[edge below,edge unit distance=1.88ex]{1}{9}{punct}
+  \depedge[edge below]{1}{4}{obl:on}
+  \depedge[edge below]{4}{2}{case}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{4}{6}{nsubj}
+  \depedge[edge below,edge unit distance=6ex]{4}{5}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{5}{ref}
+  \depedge[edge below]{5}{8}{case}
+  \depedge[edge below]{5}{7}{cop}
+  \depedge[edge below]{5}{6}{nsubj}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Focus \& on \& the \& topic \& this \& is \& about \& . \\
+  \end{deptext}
+  \depedge[edge unit distance=1.71ex]{1}{8}{punct}
+  \depedge{1}{4}{obl}
+  \depedge{4}{2}{case}
+  \depedge{4}{3}{det}
+  \depedge{4}{7}{acl:relcl}
+  \depedge{7}{5}{nsubj}
+  \depedge{7}{6}{cop}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \deproot[edge below,edge unit distance=4.5ex]{1}{root}
+  \depedge[edge below,edge unit distance=2.14ex]{1}{8}{punct}
+  \depedge[edge below]{1}{4}{obl:on}
+  \depedge[edge below]{4}{2}{case}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below,edge unit distance=4ex]{4}{7}{acl:relcl}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{7}{ref}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{4}{5}{nsubj}
+  \depedge[edge below]{7}{5}{nsubj}
+  \depedge[edge below]{7}{6}{cop}
+\end{dependency} \\
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    oyuncaklarını \& kıran \& kız \\
+    toys-her \& break-PART \& girl \\
+  \end{deptext}
+  \depedge{2}{1}{obj}
+  \depedge{3}{2}{acl:relcl}
+  \depedge[edge below]{2}{1}{obj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{2}{3}{nsubj}
+  \depedge[edge below]{3}{2}{acl:relcl}
+\end{dependency} \\
+`the girl who breaks/has broken her toys' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    her \& gün \& okulda \& gördüğüm \& kız \\
+    every \& day \& school-in \& see-PART-I \& girl \\
+  \end{deptext}
+  \depedge{2}{1}{det}
+  \depedge{4}{2}{obl}
+  \depedge{4}{3}{obl}
+  \depedge{5}{4}{acl:relcl}
+  \depedge[edge below]{2}{1}{det}
+  \depedge[edge below]{4}{2}{obl:nom}
+  \depedge[edge below]{4}{3}{obl:loc}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{4}{5}{obj}
+  \depedge[edge below]{5}{4}{acl:relcl}
+\end{dependency} \\
+`the girl whom I see at school every day' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    % I am going to meet that girl's mother. = O kızın annesiyle tanışacağım.
+    annesiyle \& tanışacağım \& kız \\
+    mother-her-with \& meet-PART-I \& girl \\
+  \end{deptext}
+  \depedge{2}{1}{obl}
+  \depedge{3}{2}{acl:relcl}
+  \depedge[edge below]{2}{1}{obl:com}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{1}{3}{nmod:poss}
+  \depedge[edge below]{3}{2}{acl:relcl}
+\end{dependency} \\
+`the girl whose mother I'm going to meet' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    başında \& şapka \& olan \& kız \\
+    head-her-on \& hat \& be-PART \& girl \\
+  \end{deptext}
+  \depedge{4}{1}{acl:relcl}
+  \depedge{1}{3}{cop}
+  \depedge{1}{2}{nsubj}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{1}{4}{nmod:poss}
+  \depedge[edge below]{4}{1}{acl:relcl}
+  \depedge[edge below]{1}{3}{cop}
+  \depedge[edge below]{1}{2}{nsubj}
+\end{dependency} \\
+`the girl who has a hat on her head' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % I spoke about the book. = Kitaptan bahsettim.
+  \begin{deptext}
+    Bahsettiğim \& kitaba \& odaklanın \& . \\
+    Spoke-PART-I \& book \& focus \& . \\
+  \end{deptext}
+  \deproot[edge unit distance=1.75ex]{3}{root}
+  \depedge{2}{1}{acl:relcl}
+  \depedge{3}{2}{obj}
+  \depedge{3}{4}{punct}
+  \deproot[edge below,edge unit distance=2.25ex]{3}{root}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=6ex]{1}{2}{obl:abl}
+  \depedge[edge below]{2}{1}{acl:relcl}
+  \depedge[edge below]{3}{2}{obj}
+  \depedge[edge below]{3}{4}{punct}
+\end{dependency} \\
+`Focus on the book I spoke about.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{dependency}[edge unit distance=3ex]
+  \begin{deptext}
+    Focus \& on \& the \& book \& I \& am \& talking \& about \& . \\
+  \end{deptext}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge unit distance=1.5ex]{1}{9}{punct}
+  \depedge{1}{4}{obl}
+  \depedge{4}{2}{case}
+  \depedge{4}{3}{det}
+  \depedge{4}{7}{acl:relcl}
+  \depedge{7}{5}{nsubj}
+  \depedge{7}{6}{aux}
+  \depedge{7}{8}{obl}
+  \deproot[edge below,edge unit distance=5.25ex]{1}{root}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{9}{punct}
+  \depedge[edge below]{1}{4}{obl:on}
+  \depedge[edge below]{4}{2}{case}
+  \depedge[edge below]{4}{3}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=3.75ex]{4}{8}{ref}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue},edge unit distance=4ex]{7}{4}{obl:about}
+  \depedge[edge below]{4}{7}{acl:relcl}
+  \depedge[edge below]{7}{5}{nsubj}
+  \depedge[edge below]{7}{6}{aux}
+  \depedge[edge below]{7}{8}{obl:about}
+\end{dependency} \\
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % I spoke about the book. = Hablé sobre el libro.
+  \begin{deptext}
+    % Concéntrate en el libro del que hablé.
+    Concentra \& te \& en \& el \& libro \& de \& el \& que \& hablé \& . \\
+    Focus \& yourself \& on \& the \& book \& of \& that \& that \& I-spoke \& . \\
+  \end{deptext}
+  \deproot[edge unit distance=3.75ex]{1}{root}
+  \depedge[edge unit distance=1.33ex]{1}{10}{punct}
+  \depedge[edge unit distance=2.25ex]{1}{5}{obl}
+  \depedge{1}{2}{expl:pv}
+  \depedge{5}{3}{case}
+  \depedge{5}{4}{det}
+  \depedge[edge unit distance=2.25ex]{5}{9}{acl:relcl}
+  \depedge{7}{6}{det}
+  \depedge{9}{7}{obl}
+  \depedge{9}{8}{mark}
+  \deproot[edge below,edge unit distance=4.5ex]{1}{root}
+  \depedge[edge below,edge unit distance=1.67ex]{1}{10}{punct}
+  \depedge[edge below,edge unit distance=2.25ex]{1}{5}{obl:en}
+  \depedge[edge below]{1}{2}{expl:pv}
+  \depedge[edge below]{5}{3}{case}
+  \depedge[edge below]{5}{4}{det}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{9}{5}{obl:de}
+  \depedge[edge below,edge unit distance=2.25ex]{5}{9}{acl:relcl:que}
+  \depedge[edge below,blue,label style={blue,fill=white,text=blue}]{5}{7}{ref}
+  \depedge[edge below]{7}{6}{det}
+  \depedge[edge below]{9}{7}{obl:de}
+  \depedge[edge below]{9}{8}{mark}
+\end{dependency} \\
+`Focus on the book I spoke about.' \\
 \end{tabular}
 %\end{comment}
 
