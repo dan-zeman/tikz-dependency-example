@@ -2660,7 +2660,7 @@
   \depedge[edge below]{7}{8}{obl:about}
 \end{dependency} \\
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   % I spoke about the book. = Hablé sobre el libro.
@@ -2693,6 +2693,71 @@
   \depedge[edge below]{9}{8}{mark}
 \end{dependency} \\
 `Focus on the book I spoke about.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % https://github.com/UniversalDependencies/docs/issues/1014
+  %Kopie PRE kódu:
+  %       جیڑا            زمیندار    گھر         ستا    پیا      ہا     میں           اوں   کوں   ڈٹھا
+  %                                                                        VERB   ACC PRON       PRON AUX AUX VERB     NOUN  NOUN-          ADJ
+  %                                                                      see-PST ACC 3SG-Distal 1SG AUX AUX sleep-PST Home Farmer-M-SG REL-M-SG
+  %Konec kopie PRE kódu.
+  %Zdá se, že přinejmenším ty glosy psal schválně zprava doleva, aby mu to jako vyšlo s tím arabským písmem.
+  %To arabské písmo se mu na Githubu zobrazovalo v opačném pořadí než mně tady nahoře, zato dole to mám asi správně (jeda je první, datha poslední).
+  %
+  %
+  %
+  %جیڑا زمیندار گھر ستا پیا ہا میں اوں کوں ڈٹھا
+  %
+  %Jeda zamindar ghar sata piya ha men aun kon datha
+  %
+  %VERB    ACC PRON       PRON AUX AUX VERB      NOUN  NOUN-       ADJ see-PST
+  %ACC 3SG-Distal 1SG  AUX AUX sleep-PST Home  Farmer-M-SG REL-M-SG
+  %
+  %"I saw the farmer who slept in the house"
+  %lit translation "Which farmer was sleeping in the house he I saw".
+  %
+  %jeda     zamindar    ghar  sata      piya ha   men aun        kon datha
+  % which farmer      house sleeping? ??   was? I   that       ACC saw
+  % REL-M-SG farmer-M-SG house sleep-PST AUX  AUX  1SG 3SG-Distal ACC see-PST
+  \begin{deptext}
+    \ar{جیڑا}
+    \&
+    \ar{زمیندار}
+    \&
+    \ar{گھر}
+    \&
+    \ar{ستا}
+    \&
+    \ar{پیا}
+    \&
+    \ar{ہا}
+    \&
+    \ar{میں}
+    \&
+    \ar{اوں}
+    \&
+    \ar{کوں}
+    \&
+    \ar{ڈٹھا}
+    \\
+    jeda \& zamindar \& ghar \& sata \& piya \& ha \& men \& aun \& kon \& datha \\
+    which \& farmer \& house \& slept \& AUX \& AUX \& I \& that \& ACC \& saw \\
+  \end{deptext}
+  \deproot{10}{root}
+  \depedge{2}{1}{det}
+  \depedge{4}{2}{nsubj}
+  \depedge{4}{3}{obl}
+  \depedge{4}{6}{aux}
+  \depedge{4}{5}{aux}
+  \depedge{8}{4}{acl:relcl}
+  \depedge{10}{7}{nsubj}
+  \depedge{10}{8}{obj}
+  \depedge{8}{9}{case}
+\end{dependency} \\
+`I saw the farmer who slept in the house.' \\
 \end{tabular}
 %\end{comment}
 
