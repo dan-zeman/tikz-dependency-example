@@ -2695,7 +2695,7 @@
 `Focus on the book I spoke about.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   % https://github.com/UniversalDependencies/docs/issues/1014
@@ -2758,6 +2758,35 @@
   \depedge{8}{9}{case}
 \end{dependency} \\
 `I saw the farmer who slept in the house.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Magdin portugalský příklad z GEL 70, Campinas, 2024.
+  % O Luís ri e diz que não sabe.
+  % Luís laughs and says that he does not know.
+  \begin{deptext}
+    O \& Luís \& ri  \& e \& diz   \& que \& não \& sabe  \& . \\
+    o \& Luís \& rir \& e \& dizer \& que \& não \& saber \& . \\
+    \upos{DET} \& \upos{PROPN} \& \upos{VERB} \& \upos{CCONJ} \& \upos{VERB} \& \upos{SCONJ} \& \upos{ADV} \& \upos{VERB} \& \upos{PUNCT} \\
+    \feat{PronType=Art} \&                    \& \feat{VerbForm=Fin} \& \& \feat{VerbForm=Fin} \& \& \& \feat{VerbForm=Fin} \\
+    \feat{Definite=Def} \&                    \& \feat{Mood=Ind}     \& \& \feat{Mood=Ind}     \& \& \& \feat{Mood=Ind}     \\
+    \feat{Gender=Masc}  \& \feat{Gender=Masc} \& \feat{Tense=Pres}   \& \& \feat{Tense=Pres}   \& \& \& \feat{Tense=Pres}   \\
+    \feat{Number=Sing}  \& \feat{Number=Sing} \& \feat{Number=Sing}  \& \& \feat{Number=Sing}  \& \& \& \feat{Number=Sing}  \\
+                        \&                    \& \feat{Person=3}     \& \& \feat{Person=3}     \& \& \& \feat{Person=3}     \\
+  \end{deptext}
+  \deproot[edge unit distance=3.75ex]{3}{root}
+  \depedge{2}{1}{det}
+  \depedge{3}{2}{nsubj}
+  \depedge[edge unit distance=2ex]{3}{9}{punct}
+  \depedge{3}{5}{conj}
+  \depedge{5}{4}{cc}
+  \depedge{5}{8}{ccomp}
+  \depedge{8}{6}{mark}
+  \depedge{8}{7}{advmod}
+\end{dependency} \\
+`Luís laughs and says he does not know.' \\
 \end{tabular}
 %\end{comment}
 
