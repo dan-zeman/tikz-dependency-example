@@ -2760,7 +2760,7 @@
 `I saw the farmer who slept in the house.' \\
 \end{tabular}
 \end{comment}
-%\begin{comment}
+\begin{comment}
 \begin{tabular}{c}
 \begin{dependency}[edge unit distance=3ex]
   % Magdin portugalský příklad z GEL 70, Campinas, 2024.
@@ -2787,6 +2787,180 @@
   \depedge{8}{7}{advmod}
 \end{dependency} \\
 `Luís laughs and says he does not know.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{wp.t}         \& \ckt{nb(.t)}       \& \ckt{hꜣb.tn}       \& \ckt{⸗f}            \& \ckt{w(i҆)}          \& \ckt{i҆m}   \& \ckt{⸗ś} \\
+    mission            \& any                \& send               \& 2SG.M              \& 1SG                \& in         \& 3SG.F \\
+    \upos{NOUN}        \& \upos{DET}         \& \upos{VERB}        \& \upos{PRON}        \& \upos{PRON}        \& \upos{ADP} \& \upos{PRON} \\
+    \feat{Gender=Fem}  \& \feat{Gender=Fem}  \& \feat{Tense=Pres}  \& \feat{Person=2}    \& \feat{Person=1}    \&            \& \feat{Person=3} \\
+    \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Number=Sing} \&            \& \feat{Number=Sing} \\
+                       \&                    \& \feat{Person=3}    \& \feat{Gender=Masc} \&                    \&            \& \feat{Gender=Fem} \\
+  \end{deptext}
+  \depedge{1}{3}{acl:relcl}
+  \depedge{1}{2}{det}
+  \depedge[edge unit distance=2.25ex]{3}{7}{obl}
+  \depedge{3}{5}{obj}
+  \depedge{3}{4}{nsubj}
+  \depedge{7}{6}{case}
+\end{dependency} \\
+`every mission on which you sent me' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{śbꜣ}          \& \ckt{kśś.w}        \& \ckt{n}    \& \ckt{⸗f}            \& \ckt{nčr(.w)} \\
+    star               \& bow                \& to         \& 3SG.M              \& gods \\
+    \upos{NOUN}        \& \upos{VERB}        \& \upos{ADP} \& \upos{PRON}        \& \upos{NOUN} \\
+    \feat{Gender=Masc} \& \feat{Tense=Pres}  \&            \& \feat{Person=3}    \& \feat{Gender=Masc} \\
+    \feat{Number=Sing} \& \feat{Number=Sing} \&            \& \feat{Number=Sing} \& \feat{Number=Sing} \\
+                       \& \feat{Gender=Masc} \&            \& \feat{Gender=Masc} \&   \\
+  \end{deptext}
+  \depedge{1}{2}{acl:relcl}
+  \depedge{2}{5}{nsubj}
+  \depedge{2}{4}{obl}
+  \depedge{4}{3}{case}
+\end{dependency} \\
+`a star to whom the gods bow' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{i҆}      \& \ckt{nčr-}         \& \ckt{ꜥꜣ}           \& \ckt{ḫmm}          \& \ckt{rn}           \& \ckt{⸗f} \\
+    o           \& god                \& great              \& be.unknown         \& name               \& 3SG.M \\
+    \upos{INTJ} \& \upos{NOUN}        \& \upos{ADJ}         \& \upos{VERB}        \& \upos{NOUN}        \& \upos{PRON} \\
+                \& \feat{Gender=Masc} \& \feat{Gender=Masc} \& \feat{Tense=Pres}  \& \feat{Gender=Masc} \& \feat{Person=3} \\
+                \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Gender=Masc} \& \feat{Number=Sing} \& \feat{Number=Sing} \\
+                \&                    \&                    \& \feat{Number=Sing} \&                    \& \feat{Gender=Masc} \\
+  \end{deptext}
+  \depedge{2}{1}{discourse}
+  \depedge{2}{4}{acl:relcl}
+  \depedge{2}{3}{amod}
+  \depedge{4}{5}{nsubj}
+  \depedge{5}{6}{nmod}
+\end{dependency} \\
+`o great god whose name is unknown' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{tꜣ}           \& \ckt{pf}           \& \ckt{i҆:šm(.w)}      \& \ckt{Wni҆ś}   \& \ckt{i҆m}    \& \ckt{⸗f} \\
+    land               \& that               \& walk               \& name         \& in         \& 3SG.M \\
+    \upos{NOUN}        \& \upos{DET}         \& \upos{VERB}        \& \upos{PROPN} \& \upos{ADP} \& \upos{PRON} \\
+    \feat{Gender=Masc} \& \feat{Gender=Masc} \& \feat{Tense=Pres}  \&              \&            \& \feat{Person=3} \\
+    \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Gender=Masc} \&              \&            \& \feat{Number=Sing} \\
+                       \&                    \& \feat{Number=Sing} \&              \&            \& \feat{Gender=Masc} \\
+  \end{deptext}
+  \depedge{1}{3}{acl:relcl}
+  \depedge{1}{2}{det}
+  \depedge[edge unit distance=2ex]{3}{6}{obl}
+  \depedge{3}{4}{nsubj}
+  \depedge{6}{5}{case}
+\end{dependency} \\
+`that land in which Unas walks' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{bw}           \& \ckt{šm.n}         \& \ckt{⸗k}            \& \ckt{i҆m}   \& \ckt{(⸗f)} \\
+    place              \& go                 \& 2SG.M              \& in         \& 3SG.M \\
+    \upos{NOUN}        \& \upos{VERB}        \& \upos{PRON}        \& \upos{ADP} \& \upos{PRON} \\
+    \feat{Gender=Masc} \& \feat{Tense=Past}  \& \feat{Person=2}    \&            \& \feat{Person=3} \\
+    \feat{Number=Sing} \& \feat{Gender=Masc} \& \feat{Number=Sing} \&            \& \feat{Number=Sing} \\
+                       \& \feat{Number=Sing} \& \feat{Gender=Masc} \&            \& \feat{Gender=Masc} \\
+  \end{deptext}
+  \depedge{1}{2}{acl:relcl}
+  \depedge[edge unit distance=2ex]{2}{5}{obl}
+  \depedge{2}{3}{nsubj}
+  \depedge{5}{4}{case}
+\end{dependency} \\
+`the place where you have gone' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{nn}    \& \ckt{ś.t}          \& \ckt{nb.t}         \& \ckt{tm.tn}        \& \ckt{(⸗i҆)}          \& \ckt{i҆r(.w)} \& \ckt{mn.w(w)}      \& \ckt{i҆m}   \& \ckt{⸗ś} \\
+    NEG         \& place              \& any                \& not.be             \& 1SG                \& make        \& monuments          \& in         \& 3SG.F \\
+    \upos{PART} \& \upos{NOUN}        \& \upos{DET}         \& \upos{VERB}        \& \upos{PRON}        \& \upos{VERB} \& \upos{NOUN}        \& \upos{ADP} \& \upos{PRON} \\
+                \& \feat{Gender=Fem}  \& \feat{Gender=Fem}  \& \feat{Tense=Past}  \& \feat{Person=1}    \&             \& \feat{Gender=Masc} \&            \& \feat{Person=3} \\
+                \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Gender=Masc} \& \feat{Number=Sing} \&             \& \feat{Number=Plur} \&            \& \feat{Number=Sing} \\
+                \&                    \&                    \& \feat{Number=Sing} \&                    \&             \&                    \&            \& \feat{Gender=Fem} \\
+  \end{deptext}
+  \depedge{2}{1}{advmod}
+  \depedge[edge unit distance=2.25ex]{2}{6}{acl:relcl}
+  \depedge{2}{3}{det}
+  \depedge{6}{4}{aux}
+  \depedge{6}{5}{nsubj}
+  \depedge[edge unit distance=2ex]{6}{9}{obl}
+  \depedge{6}{7}{obj}
+  \depedge{9}{8}{case}
+\end{dependency} \\
+`There was not any place in which (I) did not make monuments.' \\
+\end{tabular}
+\end{comment}
+\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{Ppy}    \& \ckt{pn}           \& \ckt{pw}   \& \ckt{ḫꜥ}           \& \ckt{i҆w.t(i҆)}        \& \ckt{nč̣r}          \& \ckt{i҆r.(i҆)w}        \& \ckt{tꜣ}           \& \ckt{ꜥw}           \& \ckt{⸗f}            \\
+    Pepi         \& this               \& is         \& hill               \& NEG.REL             \& grasp              \& to-NISBA           \& earth              \& hand               \& 3SG.M              \\
+    \upos{PROPN} \& \upos{DET}         \& \upos{AUX} \& \upos{NOUN}        \& \upos{PRON}         \& \upos{VERB}        \& \upos{NOUN}        \& \upos{NOUN}        \& \upos{NOUN}        \& \upos{PRON}        \\
+                 \& \feat{Gender=Masc} \&            \& \feat{Gender=Masc} \& \feat{Gender=Masc}  \& \feat{Tense=Pres}  \& \feat{Gender=Masc} \& \feat{Gender=Masc} \& \feat{Gender=Masc} \& \feat{Person=3}    \\
+                 \& \feat{Number=Sing} \&            \& \feat{Number=Sing} \& \feat{Number=Sing}  \& \feat{Gender=Masc} \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Number=Sing} \& \feat{Number=Sing} \\
+                 \&                    \&            \&                    \& \feat{PronType=Neg} \& \feat{Number=Sing} \&                    \&                    \&                    \& \feat{Gender=Masc} \\
+  \end{deptext}
+  \depedge{1}{2}{det}
+  \depedge[edge unit distance=2ex]{4}{1}{nsubj}
+  \depedge{4}{3}{cop}
+  \depedge{4}{6}{acl:relcl}
+  \depedge{6}{5}{expl}
+  \depedge[edge unit distance=2ex]{6}{9}{obj}
+  \depedge{6}{7}{nsubj}
+  \depedge{7}{8}{nmod}
+  \depedge{9}{10}{nmod}
+\end{dependency} \\
+`This Pepi is the hill (...) whose hand no earthlings grasp.' \\
+\end{tabular}
+\end{comment}
+%\begin{comment}
+\begin{tabular}{c}
+\begin{dependency}[edge unit distance=3ex]
+  % Roberto: Egyptian relative forms.
+  \begin{deptext}
+    \ckt{bw}           \& \ckt{pw}           \& \ckt{mśś.w}          \& \ckt{nčr(.w)}      \& \ckt{i҆m}   \& \ckt{(⸗f)}          \\
+    place              \& this               \& give.birth           \& gods               \& in         \& 3SG.M              \\
+    \upos{NOUN}        \& \upos{DET}         \& \upos{VERB}          \& \upos{NOUN}        \& \upos{ADP} \& \upos{PRON}        \\
+    \feat{Gender=Masc} \& \feat{Gender=Masc} \& \feat{VerbForm=Part} \& \feat{Gender=Masc} \&            \& \feat{Person=3}    \\
+    \feat{Number=Sing} \& \feat{Number=Sing} \&                      \& \feat{Number=Plur} \&            \& \feat{Number=Sing} \\
+                       \&                    \&                      \&                    \&            \& \feat{Gender=Masc} \\
+  \end{deptext}
+  \depedge{1}{2}{det}
+  \depedge{1}{3}{acl}
+  \depedge{3}{4}{nsubj:pass}
+  \depedge[edge unit distance=2ex]{3}{6}{obl}
+  \depedge{6}{5}{case}
+\end{dependency} \\
+`this place where the gods are born' \\
 \end{tabular}
 %\end{comment}
 
